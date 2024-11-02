@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\CategoriesController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,6 +18,12 @@ Route::get('/', function () {
     return view('admin.dashboard');
 })->name('dashboard');
 
-Route::get('/categories', function () {
-    return view('admin.categories');
-})->name('categories');
+
+
+Route::controller(CategoriesController::class)->group(function(){
+    Route::get('categories','index')->name('categories.list');
+    Route::get('categories/create','create')->name('categories.create');
+    Route::post('categories/store','store')->name('categories.store');
+
+
+});

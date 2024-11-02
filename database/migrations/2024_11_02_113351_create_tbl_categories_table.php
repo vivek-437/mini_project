@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('tbl_categories', function (Blueprint $table) {
             $table->integer('id', 11)->autoIncrement();
-            $table->integer('tbl_category_id');
+            $table->integer('tbl_category_id')->nullable()->default(1);
             $table->string('name');
             $table->text('description');
             $table->string('slug');
