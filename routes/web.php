@@ -14,5 +14,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
-});
+    return view('admin.dashboard');
+})->name('dashboard');
+
+Route::get('/categories', function () {
+    return view('admin.categories');
+})->name('categories');
