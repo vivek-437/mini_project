@@ -71,6 +71,14 @@
                 <div data-i18n="Categories">Categories</div>
             </a>
         </li>
+
+        <li class="menu-item {{ request()->routeIs('products.list') ? 'active' : '' }}">
+            <a href="{{ route('products.list') }}" class="menu-link">
+                <i class="menu-icon tf-icons bx bx-cart"></i> <!-- Product-related icon -->
+                <div data-i18n="Products">Products</div>
+            </a>
+        </li>
+
     </ul>
 
 </aside>
