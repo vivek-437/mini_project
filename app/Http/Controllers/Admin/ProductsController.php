@@ -97,8 +97,6 @@ class ProductsController extends Controller
             return redirect()->route('products.list')
                 ->with('success', 'Product added successfully.');
         } catch (\Exception $e) {
-            // Log the exception for debugging purposes (optional)
-            \Log::error('Error adding product: ' . $e->getMessage());
 
             // Flash a failure message to the session
             return redirect()->route('products.create')

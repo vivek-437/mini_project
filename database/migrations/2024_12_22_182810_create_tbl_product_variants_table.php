@@ -16,7 +16,7 @@ return new class extends Migration
             $table->integer('tbl_product_id');
             $table->string('sku');
             $table->decimal('price',10,2);
-            $table->decimal('discount',10,2)->nullable();
+            $table->decimal('discount_price',10,2)->nullable();
             $table->integer('stock_quantity');
             $table->string('img_url');
             $table->boolean('is_active')->default(1);
