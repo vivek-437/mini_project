@@ -3,6 +3,7 @@
 use App\Http\Controllers\Admin\CategoriesController;
 use App\Http\Controllers\Admin\ProductsController;
 use App\Http\Controllers\Admin\ProductVariantsController;
+use App\Http\Controllers\Admin\VariantAttributesController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -36,9 +37,14 @@ Route::controller(ProductsController::class)->group(function () {
     Route::post('product/store', 'store')->name('products.store');
 });
 
-Route::controller(ProductVariantsController::class)->group(function(){
+Route::controller(ProductVariantsController::class)->group(function () {
     Route::get('product_variants', 'index')->name('product-variants');
-    Route::get('product-variant/create','create')->name('product-variants.create');
-    Route::post('product-variant/store','store')->name('product-variants.store');
-    
+    Route::get('product-variant/create', 'create')->name('product-variants.create');
+    Route::post('product-variant/store', 'store')->name('product-variants.store');
+});
+
+Route::controller(VariantAttributesController::class)->group(function () {
+    Route::get('/variant_attributes', 'index')->name('variant-attributes');
+    Route::get('/variant-attrubute/create', 'create')->name('variant-attributes.create');
+    Route::post('/varaint-attribute/store', 'store')->name('variant-attributes.store');
 });

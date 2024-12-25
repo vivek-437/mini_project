@@ -7,6 +7,7 @@ use App\Models\tbl_product_variants;
 use App\Models\tbl_products;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Validator;
 
 class ProductVariantsController extends Controller
 {
@@ -57,7 +58,7 @@ class ProductVariantsController extends Controller
     public function store(Request $request)
     {
         // Validate the incoming request
-        $request->validate([
+        $validator =  Validator::make($request->all(), [
             'tbl_product_id' => 'required|exists:tbl_products,id',
             'sku' => 'required|string|max:255|unique:tbl_product_variants,sku',
             'price' => 'required|numeric|min:0',
@@ -66,7 +67,11 @@ class ProductVariantsController extends Controller
             'img_url' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
             'is_active' => 'nullable|boolean',
         ]);
-
+        if ($validator->fails()) {
+            return redirect()->back()
+                ->withErrors($validator)
+                ->withInput();
+        }
         try {
             $imagePath = null;
 
@@ -113,10 +118,7 @@ class ProductVariantsController extends Controller
             return redirect()->route('product-variants')->with('success', 'Product variant added successfully.');
         } catch (\Exception $e) {
             // Handle errors and redirect back with an error message
-            return redirect()->back()->with('error', 'Failed to add product variant. ' . $e->getMessage());
+            return redirect()->back()->with('error', 'Failed to add product variant. ' . $e->getMessage())->withInput();
         }
     }
 }
-// Failed to add product variant. SQLSTATE[HY000]: General error: 1364 Field 'img_url' doesn't have a default value (Connection: mysql, SQL: insert into `tbl_product_variants` (`tbl_product_id`, `sku`, `price`, `discount_price`, `stock_quantity`, `is_active`, `updated_at`, `created_at`) values (1, null, 12000, 11500, 10, 1, 2024-12-25 16:39:07, 2024-12-25 16:39:07))
-
-// Failed to add product variant. SQLSTATE[HY000]: General error: 1364 Field 'img_url' doesn't have a default value (Connection: mysql, SQL: insert into `tbl_product_variants` (`tbl_product_id`, `sku`, `price`, `discount_price`, `stock_quantity`, `is_active`, `updated_at`, `created_at`) values (1, null, 12000, 11500, 10, 1, 2024-12-25 16:41:14, 2024-12-25 16:41:14))
