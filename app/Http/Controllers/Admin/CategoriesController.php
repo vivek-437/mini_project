@@ -33,8 +33,8 @@ class CategoriesController extends Controller
                 })
                 ->editColumn('is_active', function ($row) {
                     return $row->is_active
-                        ? '<span class="badge bg-success">Active</span>'
-                        : '<span class="badge bg-danger">Inactive</span>';
+                        ? '<span class="badge rounded-pill bg-success">Active</span>'
+                        : '<span class="badge rounded-pill bg-danger">Inactive</span>';
                 })
                 ->editColumn('updated_at', function ($row) {
                     return $row->updated_at ? $row->updated_at->format('d M Y') : 'N/A';
@@ -52,7 +52,8 @@ class CategoriesController extends Controller
                             <a href="javascript:void(0)" 
                                 class="delete btn btn-danger btn-sm" 
                                 data-id="' . $row->id . '" ' . $deleteTooltip . '>
-                                <i class="fas fa-trash-alt"></i>
+                                    <i class="fas fa-trash"></i> 
+
                             </a>';
                 })
                 ->rawColumns(['is_active', 'action'])

@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('tbl_product_variants', function (Blueprint $table) {
             $table->integer('id', 11)->autoIncrement();
             $table->integer('tbl_product_id');
-            $table->string('sku');
+            $table->string('sku')->nullable();
             $table->decimal('price',10,2);
             $table->decimal('discount_price',10,2)->nullable();
             $table->integer('stock_quantity');

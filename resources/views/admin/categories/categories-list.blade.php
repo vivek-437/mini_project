@@ -167,10 +167,10 @@
                                     <td>${child.is_active ? '<span class="badge bg-success">Active</span>' : '<span class="badge bg-danger">Inactive</span>'}</td>
                                     <td>
                                         <a href="javascript:void(0)" class="edit btn btn-success btn-sm" data-id="${child.id}">
-                                            <i class="fas fa-edit"></i> Edit
+                                            <i class="fas fa-edit"></i> 
                                         </a>
                                         <a href="javascript:void(0)" class="delete btn btn-danger btn-sm" data-id="${child.id}">
-                                            <i class="fas fa-trash-alt"></i> Delete
+                                            <i class="fas fa-trash-alt"></i> 
                                         </a>
                                     </td>
                                 </tr>`;

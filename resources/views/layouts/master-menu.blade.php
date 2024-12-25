@@ -79,6 +79,13 @@
             </a>
         </li>
 
+        <li class="menu-item {{ request()->routeIs('product-variants') ? 'active' : '' }}">
+            <a href="{{ route('product-variants') }}" class="menu-link">
+                <i class="menu-icon tf-icons bx bx-box"></i> 
+                <div data-i18n="Products">Product Variants</div>
+            </a>
+        </li>
+        
     </ul>
 
 </aside>

@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\CategoriesController;
 use App\Http\Controllers\Admin\ProductsController;
+use App\Http\Controllers\Admin\ProductVariantsController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -31,8 +32,13 @@ Route::controller(CategoriesController::class)->group(function () {
 
 Route::controller(ProductsController::class)->group(function () {
     Route::get('products', 'index')->name('products.list');
-    Route::get('products/create', 'create')->name('products.create');
-    Route::post('products/store', 'store')->name('products.store');
+    Route::get('product/create', 'create')->name('products.create');
+    Route::post('product/store', 'store')->name('products.store');
+});
 
-
+Route::controller(ProductVariantsController::class)->group(function(){
+    Route::get('product_variants', 'index')->name('product-variants');
+    Route::get('product-variant/create','create')->name('product-variants.create');
+    Route::post('product-variant/store','store')->name('product-variants.store');
+    
 });
