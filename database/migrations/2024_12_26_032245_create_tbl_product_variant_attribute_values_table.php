@@ -11,9 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('tbl_variant_attributes', function (Blueprint $table) {
+        Schema::create('tbl_product_variant_attribute_values', function (Blueprint $table) {
             $table->integer('id', 11)->autoIncrement();
-            $table->string('name');
+            $table->integer('tbl_product_variant_id');
+            $table->integer('tbl_variant_attribute_id');
+            $table->string('value');
             $table->timestamps();
         });
     }
@@ -23,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('tbl_variant_attributes');
+        Schema::dropIfExists('tbl_product_variant_attribute_values');
     }
 };

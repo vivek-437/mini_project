@@ -4,6 +4,7 @@ use App\Http\Controllers\Admin\CategoriesController;
 use App\Http\Controllers\Admin\ProductsController;
 use App\Http\Controllers\Admin\ProductVariantsController;
 use App\Http\Controllers\Admin\VariantAttributesController;
+use App\Http\Controllers\Admin\VariantAttributeValuesController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -45,6 +46,12 @@ Route::controller(ProductVariantsController::class)->group(function () {
 
 Route::controller(VariantAttributesController::class)->group(function () {
     Route::get('/variant_attributes', 'index')->name('variant-attributes');
-    Route::get('/variant-attrubute/create', 'create')->name('variant-attributes.create');
-    Route::post('/varaint-attribute/store', 'store')->name('variant-attributes.store');
+    Route::get('/variant_attrubute/create', 'create')->name('variant-attributes.create');
+    Route::post('/varaint_attribute/store', 'store')->name('variant-attributes.store');
+});
+
+Route::controller(VariantAttributeValuesController::class)->group(function () {
+    Route::get('/variant_attribute_values', 'index')->name('variant-attribute-values');
+    Route::get('/variant_attribute_values/create', 'create')->name('variant-attribute-values.create');
+    Route::post('/variant_attribute_values/store', 'store')->name('variant-attribute-values.store');
 });

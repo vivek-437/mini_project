@@ -82,15 +82,23 @@
         <li class="menu-item {{ request()->routeIs('product-variants') ? 'active' : '' }}">
             <a href="{{ route('product-variants') }}" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-box"></i>
-                <div data-i18n="Products">Product Variants</div>
+                <div data-i18n="Products Variant">Product Variants</div>
             </a>
         </li>
         <li class="menu-item {{ request()->routeIs('variant-attributes') ? 'active' : '' }}">
             <a href="{{ route('variant-attributes') }}" class="menu-link">
                 <i class="menu-icon fa-solid fa-tags"></i>
-                <div data-i18n="Products">Variant Attributes</div>
+                <div data-i18n="Variant Attribute">Variant Attributes</div>
             </a>
         </li>
+        <li class="menu-item {{ request()->routeIs('variant-attribute-values') ? 'active' : '' }}">
+            <a href="{{ route('variant-attribute-values') }}" class="menu-link">
+                <i class="menu-icon fa-solid fa-layer-group"></i>
+                <div data-i18n="Variant Attribute Values">Variant Attributes Values</div>
+            </a>
+        </li>
+        
+        
 
     </ul>
 
