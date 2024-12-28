@@ -21,6 +21,7 @@
             .dataTables_wrapper .dataTables_info {
                 display: none;
             }
+
             .dataTables_wrapper .dataTables_length {
                 display: none;
             }
@@ -32,7 +33,8 @@
             border-spacing: 0;
         }
 
-        .table th, .table td {
+        .table th,
+        .table td {
             vertical-align: middle;
             padding: 12px;
         }
@@ -58,69 +60,99 @@
 @endsection
 
 @section('content')
-<div class="container-xxl flex-grow-1 container-p-y">
-    <div class="row">
-        <div class="col-lg-12">
-            <div class="card">
-                <div class="card-body border-bottom">
-                    <div class="d-flex align-items-center">
-                        <h5 class="mb-0 card-title flex-grow-1">Categories List</h5>
-                        <div class="flex-shrink-0">
-                            <a href="{{ route('categories.create') }}" class="btn btn-primary">Add New Category</a>
-                            <button class="btn btn-light" id="refresh-table">
-                                <i class="fas fa-sync-alt"></i>
-                            </button>
+    <div class="container-xxl flex-grow-1 container-p-y">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="card">
+                    <div class="card-body border-bottom">
+                        <div class="d-flex align-items-center">
+                            <h5 class="mb-0 card-title flex-grow-1">Categories List</h5>
+                            <div class="flex-shrink-0">
+                                <a href="{{ route('categories.create') }}" class="btn btn-primary">Add New Category</a>
+                                <button class="btn btn-light" id="refresh-table">
+                                    <i class="fas fa-sync-alt"></i>
+                                </button>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="card-body">
-                    <div class="table-responsive">
-                        <table class="table table-striped table-bordered dt-responsive nowrap w-100" id="categories-table">
-                            <thead>
-                                <tr>
-                                    <th scope="col">No</th>
-                                    <th scope="col">Name</th>
-                                    <th scope="col">Slug</th>
-                                    <th scope="col">Description</th>
-                                    <th scope="col">Update Date</th>
-                                    <th scope="col">Status</th>
-                                    <th scope="col">Action</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                {{-- Populated via DataTables --}}
-                            </tbody>
-                        </table>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table table-striped table-bordered dt-responsive nowrap w-100"
+                                id="categories-table">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">No</th>
+                                        <th scope="col">Name</th>
+                                        <th scope="col">Slug</th>
+                                        <th scope="col">Description</th>
+                                        <th scope="col">Update Date</th>
+                                        <th scope="col">Status</th>
+                                        <th scope="col">Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {{-- Populated via DataTables --}}
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
 @endsection
 
 @section('script')
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.datatables.net/2.1.8/js/dataTables.min.js"></script>
     <script>
-        $(document).ready(function () {
+        $(document).ready(function() {
             // Initialize DataTable
             const table = $('#categories-table').DataTable({
                 processing: true,
                 serverSide: true,
                 ajax: "{{ route('categories.list') }}",
-                columns: [
-                    { data: 'DT_RowIndex', name: 'DT_RowIndex', orderable: false, searchable: false },
-                    { data: 'name', name: 'name', render: renderCategoryName },
-                    { data: 'slug', name: 'slug' },
-                    { data: 'description', name: 'description' },
-                    { data: 'updated_at', name: 'updated_at' },
-                    { data: 'is_active', name: 'is_active', orderable: false, searchable: false },
-                    { data: 'action', name: 'action', orderable: false, searchable: false }
+                columns: [{
+                        data: 'DT_RowIndex',
+                        name: 'DT_RowIndex',
+                        orderable: false,
+                        searchable: false
+                    },
+                    {
+                        data: 'name',
+                        name: 'name',
+                        render: renderCategoryName
+                    },
+                    {
+                        data: 'slug',
+                        name: 'slug'
+                    },
+                    {
+                        data: 'description',
+                        name: 'description'
+                    },
+                    {
+                        data: 'updated_at',
+                        name: 'updated_at'
+                    },
+                    {
+                        data: 'is_active',
+                        name: 'is_active',
+                        orderable: false,
+                        searchable: false
+                    },
+                    {
+                        data: 'action',
+                        name: 'action',
+                        orderable: false,
+                        searchable: false
+                    }
                 ],
                 rowId: row => `category-${row.id}`,
                 responsive: true,
-                order: [[4, 'desc']] // Order by the update date in descending order
+                order: [
+                    [4, 'desc']
+                ] // Order by the update date in descending order
             });
 
             // Render category name with toggle icon for nested categories
@@ -136,7 +168,7 @@
             }
 
             // Handle toggle for nested rows
-            $('#categories-table tbody').on('click', '.toggle-icon', function () {
+            $('#categories-table tbody').on('click', '.toggle-icon', function() {
                 const $icon = $(this).find('i');
                 const parentId = $(this).data('id');
                 const parentRow = $(this).closest('tr');
@@ -154,8 +186,10 @@
                 $.ajax({
                     url: "{{ route('categories.children') }}",
                     type: 'GET',
-                    data: { parent_id: parentId },
-                    success: function (data) {
+                    data: {
+                        parent_id: parentId
+                    },
+                    success: function(data) {
                         data.forEach(child => {
                             const childRow = `
                                 <tr class="nested" data-parent="${parentId}">
@@ -178,7 +212,7 @@
                         });
                         toggleNestedRows($(`tr.nested[data-parent="${parentId}"]`), $icon);
                     },
-                    error: function (xhr) {
+                    error: function(xhr) {
                         console.error('Failed to load child categories:', xhr.responseText);
                     }
                 });
@@ -191,7 +225,7 @@
             }
 
             // Refresh DataTable
-            $('#refresh-table').on('click', function () {
+            $('#refresh-table').on('click', function() {
                 table.ajax.reload();
             });
         });

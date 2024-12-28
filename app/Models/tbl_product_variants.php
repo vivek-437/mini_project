@@ -16,4 +16,5 @@ class tbl_product_variants extends Model
     {
         return $this->belongsTo(tbl_products::class, 'tbl_product_id');
     }
+    
 }

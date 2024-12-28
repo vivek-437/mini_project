@@ -97,8 +97,14 @@
                 <div data-i18n="Variant Attribute Values">Variant Attributes Values</div>
             </a>
         </li>
-        
-        
+        <li class="menu-item {{ request()->routeIs('product-variant-images') ? 'active' : '' }}">
+            <a href="{{ route('product-variant-images') }}" class="menu-link">
+                <i class="menu-icon fa-solid fa-image"></i> <!-- Updated icon -->
+                <div data-i18n="Product Variant Images">Product Variant Images</div>
+            </a>
+        </li>
+
+
 
     </ul>
 
