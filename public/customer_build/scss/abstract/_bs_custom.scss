@@ -1,0 +1,33 @@
+@import "./../../vendor/bootstrap/scss/functions";
+@import "./../../vendor/bootstrap/scss/variables";
+@import "./../../vendor/bootstrap/scss/utilities";
+
+$utilities: map-merge(
+  $utilities,
+  (
+    "cursor": (
+      property: cursor,
+      class: cursor,
+      responsive: true,
+      values: auto pointer grab,
+    ),
+	"margin-end": (
+      responsive: true,
+      property: margin-right,
+      class: me,
+      values: map-merge($spacers, (auto: auto))
+    ),
+    "margin-bottom": (
+      responsive: true,
+      property: margin-bottom,
+      class: mb,
+      values: map-merge($spacers, (auto: auto))
+    ),
+    "margin-start": (
+      responsive: true,
+      property: margin-left,
+      class: ms,
+      values: map-merge($spacers, (auto: auto))
+    ),
+  )
+);

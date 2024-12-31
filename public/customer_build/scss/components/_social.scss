@@ -1,0 +1,110 @@
+.dz-social-icon{
+	ul{
+		display: flex;
+	}
+	li{
+		display:inline-block;
+		margin-#{$dz-pos-right}: 5px;
+		a{
+			height:40px;
+			width:40px;
+			min-width:40px;
+			line-height:40px;
+			font-size: 16px;
+			text-align:center;
+			border-radius:5px;
+			@include transitionMedium;
+		}
+	}
+	&.style-1{	
+		display:flex;
+		li{
+			margin-#{$dz-pos-right}:10px;
+			color:#000;
+			a{
+				color: var(--primary);
+				background-color: rgba(255, 255, 255, 0.1);
+				width: 44px;
+				height: 44px;
+				color:#fff;
+				line-height:44px;
+				font-size:20px;
+				display:block;
+				&:hover{
+					background-color:var(--primary);
+					color:#fff;
+				}
+			}
+		}
+		@include custommq($max:1191px){
+			justify-content: center;
+		}
+	}
+	&.style-2{
+		li{
+			margin-#{$dz-pos-right}:10px;
+			color:#000;
+			a{
+				color:var(--secondary);
+				width: 55px;
+				height: 55px;
+				line-height:55px;
+				font-size:20px;
+				border: 1px solid var(--border-color);
+				border-radius: 50%;
+				display:block;
+				&:hover{
+					background-color:var(--secondary);
+					border-color: var(--secondary);
+					color:#fff;
+				}
+			}
+		}
+		@include respond('phone-land-min'){
+			&.white{
+				color:#fff;
+				a{
+					color:#fff;
+					border: 1px solid rgba(255, 255, 255, 0.1);
+					&:hover{
+						background-color:#fff;
+						border-color: #fff;
+						color:var(--secondary);
+					}
+				}
+			}
+		}
+		@include custommq($max:1191px){
+			justify-content: center;
+		}
+	}
+	&.style-3{
+		li{
+			width: 30px;
+			height: 30px;
+			line-height: 30px;
+			text-align:center;
+			border-radius:var(--border-radius-base);
+			&:nth-child(1){
+				background-color: $facebook;
+			}
+			&:nth-child(2){
+				background-color: $twitter;
+			}
+			&:nth-child(3){
+				background-color: $whatsapp;
+			}
+			&:nth-child(4){
+				background-color: $google-plus;
+			}
+			a{
+				color:$white;
+				font-size: 16px;
+				line-height: 1;
+			}
+		}
+		@include respond('phone'){
+			display:none;
+		}
+	}
+}

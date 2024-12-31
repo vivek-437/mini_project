@@ -1,0 +1,71 @@
+
+.post-video{
+	position:relative;
+	a{
+		display:block;	
+		position:relative;
+	}
+	.post-video-icon{
+	    width: 80px;
+		height: 80px;
+		position: absolute;
+		top: 50%;
+		#{$dz-pos-left}: 50%;
+		background: #fff;
+		@include translateZ50;
+		@include transitionMedium;
+		font-size: 30px;
+		text-align: center;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		padding-#{$dz-pos-left}: 5px;
+		border-radius: 4px;
+		&:hover{
+			background:var(--primary);
+			color:#fff;
+		}
+	}
+	@include respond('phone'){
+		.post-video-icon{
+			width: 50px;
+			height: 50px;
+			font-size: 24px;
+			padding-#{$dz-pos-left}: 2px;
+		}
+	}
+}
+
+.dz-meta {
+  margin-bottom: 10px; 
+}
+.dz-meta ul {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap; 
+    li {
+      display: inline-flex;
+      position: relative;
+      font-size: 14px;
+      font-weight: 400;
+      margin-#{$dz-pos-right}: 10px;
+      align-items: center;
+      gap: 6px;
+      flex-wrap: wrap;
+       i {
+        font-size: 15px;
+        margin-#{$dz-pos-right}: 2px;
+        color: var(--secondary);
+        position: relative;
+        top: -1px; 
+		}
+	}
+}
+@media only screen and (max-width: 575px) {
+    .dz-meta ul li {
+      margin-#{$dz-pos-right}: 10px;
+      padding-#{$dz-pos-right}: 10px;
+	} 	  
+}

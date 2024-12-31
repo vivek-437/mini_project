@@ -1,0 +1,63 @@
+// range-slider
+.range-slider{
+	&.style-1{
+		.noUi-horizontal{
+			height: 4px;
+			.noUi-handle {
+				width: 12px;
+				height: 12px;
+				border-radius: 2px;
+				border: 3px solid var(--primary);
+				background-color: $white;
+				box-shadow: none;
+				top: -4px;
+				right: 0;
+				cursor: pointer;
+				&:before,
+				&:after{
+					content: none;
+				}
+				
+				.noUi-tooltip {
+					display: none;
+					border: 0px;
+					background: var(--primary);
+					color: rgb(255, 255, 255);
+					border-radius: 4px;
+					font-size: 13px;
+					bottom: -35px;
+					font-weight: 600;
+					padding: 2px 5px;
+					&:after{
+						content: "";
+						position: absolute;
+						background-color: inherit;
+						width: 10px;
+						height: 10px;
+						top: 4px;
+						margin-#{$dz-pos-left}: -4px;
+						#{$dz-pos-left}: 50%;
+						transform: rotate(45deg) translate(-50%, -50%);
+					}
+				}
+			}
+		}
+		.noUi-target {
+			background: #D7D7D7;
+			border-radius: 0;
+			border: 0;
+			box-shadow: none;
+			
+			.noUi-connect {
+				background: var(--primary);
+			}
+		}
+		span{
+			margin-#{$dz-pos-right}: 15px;
+		}
+		.example-val{
+			font-size: 14px;
+			color: var(--title);
+		}
+	}
+}

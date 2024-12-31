@@ -1,0 +1,178 @@
+.nav-pills{
+	border: 0;
+    justify-content: space-between;
+	.nav-link {
+		padding: 0;
+		width:100%;
+	}
+}
+.tab-content{
+	margin-top:0px;
+}
+
+.dz-tabs{
+	.nav-tabs {
+		border: 0;
+		border-bottom: 1px solid var(--border-color);
+		.nav-link {
+			width: 100%;
+			padding: 10px 20px;
+			text-align: start;
+			font-size: 16px;
+			font-weight: 500;
+			border-radius: 0;
+			background-color: transparent;
+			border: 0;
+			border-bottom: 2px solid transparent;
+			color:var(--secondary);
+			box-shadow: unset;
+			font-family: var(--font-family-title);
+			@include respond('phone'){
+				font-size: 14px;
+			}
+			.badge{
+				color: var(--title);
+				padding: 0 2px;
+				border-radius: 20px;
+				margin-#{$dz-pos-left}: 5px;
+				width: 24px;
+				height: 24px;
+				line-height: 25px;
+				@include respond('phone'){
+					width: 20px;
+					height: 20px;
+					line-height: 22px;
+				}
+			}
+			&.active{
+				border-color:var(--secondary);
+				color:var(--secondary);
+				.badge{
+					background: var(--title);
+					color: #fff;
+				}
+			}
+		}
+		&.left{
+			justify-content: $dz-pos-left;
+		}	
+		&.center{
+			justify-content: center;
+		}	
+		&.right{
+			justify-content: $dz-pos-right;			
+		}
+	}
+	.tab-content{
+		padding-top: 50px;
+	}
+	@include respond('tab-port'){
+		.tab-content{
+			padding-top: 30px;
+		}	
+	}
+	@include respond('phone'){
+		.tab-content{
+			padding-top: 20px;
+		}	
+	}
+	&.style-1{
+		margin-bottom:40px;
+		.nav-tabs {
+			border: none;
+			display: flex;
+			gap: 20px;
+			margin-#{$dz-pos-right}: -20px;
+			.nav-link {
+				max-width:calc(33.33% - 20px);
+				flex: 0 0 calc(33.33% - 20px);
+				cursor: pointer;
+				padding: 15px 30px;
+				font-size: 20px;
+				text-align:start;
+				font-weight: 500;
+				border-radius: 0;
+				background:#fff;
+				color:var(--secondary);
+				border:1px solid transparent;
+				font-family: var(--font-family-title);
+				&.active,
+				&:hover,
+				&:active,
+				&:focus{
+					border-color:var(--primary);
+				}
+				svg{
+					margin-#{$dz-pos-right}:10px;
+				}
+			}
+		}
+		&.tab-space{
+			margin-bottom:75px;
+			margin-top:35px;
+		}
+		@include respond('wide-desktop'){
+			.nav-tabs{
+				.nav-link {
+					padding: 15px 20px;
+				}
+			}
+		}
+		@include respond('laptop'){
+			.nav-tabs{
+				.nav-link {
+					max-width:calc(50% - 20px);
+					flex: 0 0 calc(50% - 20px);
+				}
+			}
+		}
+		@include respond('laptop'){
+			.nav-tabs{
+				.nav-link {
+					max-width:calc(50% - 20px);
+					flex: 0 0 calc(50% - 20px);
+				}
+			}
+		}
+		@include respond('tab-port'){
+			&.tab-space{
+				margin-bottom:0px;
+				margin-top:0px;
+			}
+			.nav-tabs{
+				.nav-link {
+					max-width:calc(33.33% - 20px);
+					flex: 0 0 calc(33.33% - 20px);
+				}
+			}
+		}
+		@include respond('phone-land'){
+			.nav-tabs{
+				.nav-link {
+					max-width:calc(50% - 20px);
+					flex: 0 0 calc(50% - 20px);
+				}
+			}
+		}
+		@include respond('phone'){
+			.nav-tabs {
+				gap: 15px;
+				margin-#{$dz-pos-right}: -15px;
+				.nav-link {
+					max-width: calc(33.33% - 15px);
+					flex: 0 0 calc(33.33% - 15px);
+					display: flex;
+					align-items: center;
+					flex-direction: column;
+					justify-content: center;
+					padding: 12px 0;
+					font-size: 16px;
+					gap: 5px;
+					svg{
+						margin-#{$dz-pos-right}:0;
+					}
+				}
+			}
+		}
+	}
+}

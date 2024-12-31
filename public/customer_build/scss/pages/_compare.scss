@@ -1,0 +1,164 @@
+.compare-box {
+	margin: 0 auto 0 auto;
+    margin-top: -287px;
+    position: relative;
+    z-index: 99;
+}
+.compare-table{
+	margin-top: -400px;
+    position: relative;
+    z-index: 99;
+	@include respond('tab-land'){
+		margin-top: -200px;
+	}
+	@include respond('phone-land'){
+		margin-top: -150px;
+	}
+	@include respond('phone-land'){
+		margin-top: -100px;
+	}
+	.shop-card.style-1 .dz-media{
+		@include respond('tab-port'){
+			width: auto;
+			height: auto;
+		}
+	}
+	tr{
+		@include respond('tab-land'){
+			display:flex;
+			flex-wrap: wrap;
+		}
+		&.compare-product{
+			td{
+				&:first-child{
+					background:transparent;
+				}
+			}
+			.shop-card.style-1 {
+				@include respond('phone-land'){
+					.dz-media{
+						margin: 0px auto 0px auto;
+					}
+				}
+				@include respond('phone-land'){
+					.dz-content{
+						padding: 10px 0 0 0;
+					}
+					.price,
+					.star-rating{
+						display:none;
+					}
+					.title{
+						font-size: 13px;
+						text-align: center;
+						margin-bottom:15px;
+					}
+				}
+				.compare-table{
+					margin-top: -150px;
+				}
+			}
+		}
+		
+		td:empty {
+			padding: 0 !important;
+		}
+		td{
+			background:#fff;			
+			padding: 7px 30px;
+			font-size: 14px;
+			line-height: 20px;
+			border: 0;
+			color: var(--title);
+			font-weight: 400;
+			border-#{$dz-pos-right}:1px solid #eee;
+			@include respond('laptop'){
+				padding: 5px 15px;
+				font-size: 13px;
+			}
+			@include respond('tab-land'){
+				flex: 0 0 25%;
+				text-align: center;
+				width: 25%;
+				word-break: break-word;
+			}
+			@include respond('phone-land'){
+				padding: 5px 8px;
+			}	
+			@include respond('phone'){
+				font-size: 11px;
+				line-height: 1.4;
+			}	
+			&:first-child{
+				background:$light;
+				width:450px;
+					@include respond('tab-land'){
+						flex: 0 0 100%;
+						text-align: center;
+						width: 100%;
+					}
+			}
+			&:last-child{
+				border-#{$dz-pos-right}:0;
+			}
+			i{
+			font-size: 10px;
+			width: 16px;
+			height: 16px;
+			line-height: 16px;
+			text-align: center;
+			background: var(--primary);
+			color: #fff;
+			border-radius: 50%;
+			margin-#{$dz-pos-right}: 15px;
+				@include respond('laptop'){
+					margin-#{$dz-pos-right}: 5px;
+				}
+				@include respond('tab-land'){
+					margin:auto;
+					display: block;
+				}
+				@include respond('phone'){
+					width: 13px;
+					height: 14px;
+					line-height: 14px;
+					margin-bottom:5px;
+				}	
+			}
+		}
+		&.compare-table-head{
+			td{
+				padding: 15px 30px;
+			    background: rgba(0, 0, 0, 0.1);
+				@include respond('laptop'){
+				    padding: 10px 15px;
+				}
+				h5{
+					margin:0;
+					line-height: 30px;
+					@include respond('phone'){
+						font-size: 14px;
+						line-height: 1.3;
+					}
+				}
+			}
+		}
+		&.compare-start{
+			td{
+				padding-top: 35px;
+				@include respond('laptop'){
+				    padding-top: 15px;
+				}
+			}
+		}
+		&.compare-end{
+			td{
+				padding-bottom: 35px;
+				@include respond('laptop'){
+				    padding-bottom: 15px;
+				}
+			}
+		}
+	}
+}
+

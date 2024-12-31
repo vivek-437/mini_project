@@ -1,0 +1,63 @@
+/* Light Gallery */
+.lg-actions .lg-next, 
+.lg-actions .lg-prev, 
+.lg-sub-html, 
+.lg-toolbar{
+    background-color: rgba(255, 255, 255, .9);
+}
+.lg-outer{
+	z-index: 1000000;
+	.lg-toogle-thumb, 
+	.lg-thumb-outer,
+	.lg-img-wrap, 
+	.lg-item{
+		background-color: transparent;
+	}
+	.lg-object{
+		border: 1px solid rgba(0, 0, 0, 0.20);
+	}
+}
+.lg-backdrop {
+    background-color: rgba(255, 255, 255, 0.9);
+	backdrop-filter: blur(15px);
+	z-index: 999999;
+}
+
+.lg-outer .lg-toogle-thumb, 
+.lg-actions .lg-next, 
+.lg-actions .lg-prev, 
+.lg-toolbar .lg-icon,
+#lg-counter{
+    color: $dark;
+}
+.lg-next, 
+.lg-prev{
+    background-color: var(--light);
+    border-radius: 0;
+    color: #999;
+    padding: 10px 10px 10px;
+    &:hover{
+		background-color: var(--secondary);
+		color:#fff;
+	}
+}
+
+.lg-outer{
+	.lg-thumb{
+		width: auto!important;
+	}
+	.lg-thumb-item{
+		border-radius: 0px;
+		width: 70px!important;
+		height: 70px!important;
+		margin-#{$dz-pos-right}: 5px!important;
+		&.active,
+		&:hover{
+			border-color: var(--secondary);			
+		}
+	}
+}
+.lightimg{
+	cursor: pointer;
+}
+

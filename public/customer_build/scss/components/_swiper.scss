@@ -1,0 +1,318 @@
+.swiper-button-next,
+.swiper-button-prev{
+	background-image: none !important;
+}
+.btn-next, 
+.btn-prev{
+	position: relative;
+    top: auto;
+    #{$dz-pos-left}: auto;
+    #{$dz-pos-right}: auto;
+    bottom: auto;
+    width: 50px;
+    height: 50px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+    color: var(--secondary);
+    background: $light;
+    font-size: 18px;
+    letter-spacing: 2px;
+    z-index: 1;
+    border-radius: 50%;
+    margin: 0 5px;
+	@include transitionMedium;
+	svg{
+		path{
+			stroke: var(--secondary);
+		}
+	}
+	&:hover{
+		background: var(--secondary);
+		svg{
+			path{
+				stroke: $white;
+			}
+		}
+		i{
+			color: $white;
+		}
+	}
+	&:after{
+		content:none;	
+	}
+	i{
+		font-size: 24px;
+	}
+	@include respond('phone'){
+		width: 40px;
+		height: 40px;
+		line-height: 38px;
+	}
+}
+
+.swiper-btn-center-lr{
+	position:relative;
+	&.portfolio-project{
+		.btn-prev{
+			#{$dz-pos-left}:100px;
+		}
+		.btn-next{
+			#{$dz-pos-right}:100px;
+		}
+		@include respond('tab-land'){
+			.btn-prev{
+				#{$dz-pos-left}:50px;
+			}
+			.btn-next{
+				#{$dz-pos-right}:50px;
+			}
+		}
+		@include respond('phone-land'){
+			.btn-prev{
+				#{$dz-pos-left}:20px;
+			}
+			.btn-next{
+				#{$dz-pos-right}:20px;
+			}
+		}
+	}
+	.btn-next,
+	.btn-prev{
+		position:absolute;
+		top:50%;
+		transform:translateY(-50%);
+	}
+	.btn-prev{
+		#{$dz-pos-left}:-100px;
+	}
+	.btn-next{
+		#{$dz-pos-right}:-100px;
+	}
+	
+	@include custommq ($max : 1500px){
+		.btn-prev{
+			#{$dz-pos-left}:-80px;
+		}
+		.btn-next{
+			#{$dz-pos-right}:-80px;
+		}
+	}
+	@include respond ('laptop'){
+		.btn-prev{
+			#{$dz-pos-left}:-80px;
+		}
+		.btn-next{
+			#{$dz-pos-right}:-80px;
+		}
+	}
+	@include custommq($max:1280px){
+		.btn-prev{
+			#{$dz-pos-left}:-30px;
+		}
+		.btn-next{
+			#{$dz-pos-right}:-30px;
+		}
+	}
+	@include respond ('phone-land'){
+		.btn-prev{
+			#{$dz-pos-left}:-25px;
+		}
+		.btn-next{	
+			#{$dz-pos-right}:-25px;
+		}
+	}
+	@include respond ('phone'){
+		.btn-prev,
+		.btn-next{
+			display: none;
+		}
+	}
+}
+.portfolio-gallery.swiper {
+	position: sticky;
+    top: 0;
+}
+.portfolio-gallery{
+	.swiper-slide {
+		.dz-media{
+			img{
+				height: 100vh;
+				object-fit: cover;
+			}
+			
+		}
+		.portfolio-box.style-2 .dz-content{
+		    height: auto;
+			padding: 40px;
+			.product-tag{
+				margin-bottom:10px;
+			}
+			.title{
+				font-size: 35px;
+				width: 80%;
+				
+				@include respond('tab-port'){
+					font-size:24px;
+					width:100%;
+				}
+				@include respond('phone'){
+					font-size:18px;
+				}
+			}
+			@include respond('tab-port'){
+				padding: 20px;
+			}
+		}
+		@include respond('phone-land'){
+			.dz-media{
+				img{
+					height: 70vh;
+					object-fit: cover;
+				}
+			}
+		}
+		@include respond('phone'){
+			.dz-media{
+				img{
+					height: 50vh;
+					object-fit: cover;
+				}
+			}
+		}
+	}
+}
+.portfolio-thumb.swiper {
+    width: 100%;
+    height: auto;
+	overflow:unset;
+}
+
+.portfolio-thumb {
+	.swiper-wrapper{
+		height: unset;
+		flex-wrap: wrap;
+		transform: unset !important;
+		width: 100% !important;
+		display: flex;
+		.swiper-slide {
+			//height: calc(100% / 2) !important;
+			//transition: all 0.5s;
+			//display: flex;
+			//justify-content: center;
+			//align-items: center;
+			//width: 50% !important;
+		    width: 50% !important;
+			height:auto;
+			padding: 20px;
+			//float: $dz-pos-left;
+			@include respond('tab-land'){
+				width: 100% !important;
+			}
+			@include respond('phone-land'){
+				width: 50% !important;
+			}
+			@include respond('phone'){
+				width: 100% !important;
+			}
+			img {
+				height: 100%;
+				object-fit: cover;
+				width: 100%; 
+			}
+		}
+		@include respond('tab-port'){
+			.swiper-slide{
+				padding: 8px;
+			}
+		}
+		@include respond('phone-land'){
+			margin:auto;
+		}
+	}
+}
+
+.portfolio-gallery3{
+	.swiper-wrapper{
+		.swiper-slide{
+			img{
+				height:80vh;
+				min-height: 600px;
+				object-fit:cover;
+				@include respond('tab-land'){
+					height:auto;
+					min-height:auto;
+				}
+			}
+			.dz-content{
+			    padding: 40px;
+				.title{
+					font-size: 28px;
+					width: 100%;
+					@include respond('tab-port'){
+						font-size:24px;
+						width:100%;
+					}
+					@include respond('phone'){
+						font-size:18px;
+					}
+				}
+				@include respond('tab-port'){
+					padding: 20px;
+				}
+			}
+		}
+	}
+}
+.portfolio-gallery2 {
+	.swiper-wrapper{
+		.swiper-slide{
+			width:960px;
+			@include respond('tab-land'){
+				width:80%;
+			}
+			img{
+				height:80vh;
+				min-height:600px;
+				object-fit: cover;
+				@include respond('tab-land'){
+					height:auto;
+					min-height:auto;
+				}
+			}
+			.dz-content{
+			    padding: 40px;
+				.title{
+					font-size: 35px;
+					width: 75%;
+					@include respond('tab-port'){
+						font-size:24px;
+						width:100%;
+					}
+					@include respond('phone'){
+						font-size:18px;
+					}
+				}
+				@include respond('tab-port'){
+					padding: 20px;
+				}
+			}
+			
+		}
+	}
+}
+.project-carousel{
+	.swiper-wrapper{
+		.swiper-slide{
+			img{
+				height:50vh;
+				object-fit:cover;
+			}
+			@include respond('phone-land'){
+				img{
+					height:30vh;
+				}
+			}
+		}
+	}
+}

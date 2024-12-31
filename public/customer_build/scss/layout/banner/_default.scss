@@ -1,0 +1,196 @@
+// dz-bnr-inr
+.dz-bnr-inr{
+	--dz-banner-height:350px;
+    min-height: var(--dz-banner-height);
+    background-size: cover;
+	background-position: top;
+	background-color:#fbfbfb;
+	position: relative;
+	z-index: 2;
+	width: 100%;
+	&.dz-banner-dark{
+		background:var(--secondary);
+		--title: #fff;
+	}
+	@include respond('tab-port'){
+		--dz-banner-height:300px;
+	}
+	@include respond('phone'){
+		--dz-banner-height:230px;
+	}
+	&.bg-secondary{
+		h1{
+			color:#fff;
+		}
+		.breadcrumb-row{
+			ul{
+				li{
+					color:#fff;
+						&:before{
+							color:#fff;
+						}
+					a{
+						color: #ffffff;	
+					}
+				}
+			}	
+		}
+	}	
+	.container{
+		display: table;
+		height: 100%;
+	}
+	.dz-bnr-inr-entry{
+		height:  var(--dz-banner-height);
+		vertical-align: middle;
+		display: table-cell;
+	    text-align: center;
+	    padding: 100px 0 80px 0;
+		@include respond('phone-land'){
+			text-align:center;
+			.breadcrumb-row{
+				display:inline-block;
+			}
+		}	
+		@include respond('phone'){
+			padding: 80px 0 40px 0;
+		}	
+	}
+	h1 {
+		font-size: 2.5rem;
+		margin-bottom: 10px;
+		line-height: 1.2;
+		color: var(--title);
+		text-transform: capitalize;
+		@include respond('tab-port'){
+			font-size: 40px;
+		}
+		@include respond('phone-land'){
+			font-size: 30px;
+		}
+		@include respond('phone'){
+			font-size: 24px;
+		}
+	}
+	p{
+		color:#fff;
+		font-size:18px;
+		max-width: 560px;
+		margin-#{$dz-pos-left}: auto;
+		margin-#{$dz-pos-right}: auto;
+
+		@include respond ('phone'){
+			font-size:14px;
+		}
+	}
+	
+	// height sm
+	&.dz-bnr-inr-lg{
+		--dz-banner-height:600px;
+		@include respond('tab-port'){
+			--dz-banner-height:450px;
+		}
+		@include respond('phone-land'){
+			--dz-banner-height:380px;
+		}
+		@include respond('phone'){
+			--dz-banner-height:350px;
+		}
+	}
+	
+	&.dz-bnr-inr-md{
+		--dz-banner-height:450px;
+		
+		@include respond ('tab-port'){
+			--dz-banner-height:400px;
+		}
+		@include respond('phone'){
+			--dz-banner-height:300px;
+		}
+	}
+	
+	// height sm
+	&.dz-bnr-inr-sm{
+		--dz-banner-height:300px;
+		@include respond ('phone-land'){
+			--dz-banner-height:200px;
+		}
+	}
+	&.bnr-no-img:before{
+		content:none;
+	}
+	.breadcrumb-row{
+		ul{
+			margin-bottom:0;
+		}
+	}
+	.kanbern-bnr{
+		position:absolute;
+		#{$dz-pos-left}:0;
+		top:0;
+		width:100%;
+		height:100%;
+		z-index:-1;
+		
+		.swiper-slide{
+			& > div{
+				position:absolute;
+				#{$dz-pos-left}:0;
+				top:0;
+				width:100%;
+				height:100%;
+				z-index:-1;
+				transition:20s !important;
+				background-position:center;
+				background-size:100%;
+			}
+			
+			&.swiper-slide-active > div{
+				background-size:150%;
+			}	
+		}
+	}
+	
+}
+.breadcrumb-row{
+	ul {
+		padding: 0;
+		display:inline-block;
+		li {
+			padding: 0;
+			margin-#{$dz-pos-right}: 3px;
+			display: inline-block;
+			font-size: 16px;
+			font-weight: 400;
+			text-transform: capitalize;
+			color: var(--title);
+			&.active{
+				color: var(--title);			
+			}
+			a{
+				color: var(--title);
+			}
+		}
+		.breadcrumb-item + .breadcrumb-item::before{
+			content: "\f105";
+			float: $dz-pos-left;
+			color: var(--title);
+			font-weight: 700;
+			font-family: "Font Awesome 5 Free";
+			font-size: 16px;
+			padding-#{$dz-pos-right}: 12px;
+			top: 0px;
+			position: relative;
+			@include respond ('phone-land'){
+				top: 2px;
+				font-size: 13px;
+			}
+		}
+		@include respond ('phone-land'){
+			//padding: 7px 20px;
+			li{
+				font-size:14px;
+			}
+		}
+	}
+}

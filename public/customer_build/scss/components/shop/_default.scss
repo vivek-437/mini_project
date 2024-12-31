@@ -1,0 +1,20 @@
+.dz-carticon,
+.dz-wishicon{
+    padding: 0;
+	.dz-cart-check,
+	.dz-heart-fill{
+		display:none;
+	}
+}
+.active.btn.dz-carticon,
+.active.btn.dz-wishicon{
+	background-color:var(--primary) !important;
+	.dz-cart-out,
+	.dz-heart{
+		display:none;
+	}
+	.dz-cart-check,
+	.dz-heart-fill{
+		display:inline-block;
+	}
+}

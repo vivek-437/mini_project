@@ -1,0 +1,816 @@
+// form-label
+.form-label{
+	font-size    : 16px;
+	font-weight  : 700;
+	color        : var(--title);
+	margin-bottom: 15px;
+	background   : transparent;
+	border-color : $border-color;
+	font-family  : var(--font-family-title);
+}
+// form-control
+.form-control {
+    height    	 : 50px;
+    border       : 0;
+    padding      : 10px 20px;
+    font-size    : 15px;
+    font-weight  : 400;
+    color        : $headings-color;
+    transition   : all 0.3s ease-in-out;
+    background   : $light;
+	border-radius:0;
+    .select {
+        padding: 12px 0;
+    }
+
+    span {
+        margin-top: 0;
+    }
+
+    &::-webkit-input-placeholder {
+        color: #787D8C;
+    }
+
+    &:-ms-input-placeholder {
+        color: #787D8C;
+    }
+	&::placeholder{
+		color: #787D8C;
+	}
+	&:focus,
+    &:active,
+    &.active {
+        border-color: var(--primary);
+		background   : $light;
+    }
+}
+textarea.form-control{
+    min-height: auto;
+	height:unset;
+}
+// textarea
+textarea{
+	height: 120px;
+	resize: none;
+}
+
+input:-internal-autofill-selected {
+    background      : lighten($body-bg, 2%) !important;
+    background-image: none !important;
+    color           : -internal-light-dark-color(black, white) !important;
+}
+
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration {
+  -webkit-appearance:none;
+}
+
+.input-group-text {
+    // font-size    : 20px !important;
+    padding         : 5px 15px;
+    background      : $body-bg;
+    margin-bottom   : 0px !important;
+    color           : $body-color;
+    border-color    : transparent;
+}
+
+// Styling Selectbox
+
+// toggle
+.toggle {
+    cursor          : pointer;
+    display         : block;
+    // margin-bottom: 30px !important;
+}
+.toggle-switch {
+    display       : inline-block;
+    background    : darken($body-bg, 3%);
+    border-radius : 16px;
+    width         : 45px;
+    height        : 20px;
+    position      : relative;
+    vertical-align: middle;
+    transition    : background 0.25s;
+
+    &:before,
+    &:after {
+        content: "";
+    }
+
+    &:before {
+        display      : block;
+        background   : linear-gradient(to bottom, $white 0%, #eee 100%);
+        border-radius: 50%;
+        // box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.25);
+        width        : 17px;
+        height       : 17px;
+        position     : absolute;
+        top          : 1px;
+        left         : 3px;
+        transition   : left 0.25s;
+    }
+
+    .toggle:hover &:before {
+        background   : linear-gradient(to bottom, $white 0%, $white 100%);
+        // box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.5);
+    }
+
+    .toggle-checkbox:checked+& {
+        background: var(--primary);
+
+        &:before {
+            #{$dz-pos-left}: 26px;
+        }
+    }
+}
+.toggle-checkbox {
+    position  : absolute;
+    visibility: hidden;
+}
+.toggle-label {
+    margin-#{$dz-pos-left}: 15px;
+    position   : relative;
+    top        : 2px;
+    font-size  : 16px;
+    font-weight: 400;
+}
+
+// Upload btn
+.file-upload-wrapper {
+    position     : relative;
+    width        : 100%;
+    height       : calc(1.5em + 1rem + 2px);
+    border       : 1px solid $border-color;
+    border-radius: 5px;
+    color        : $text-muted;
+
+    &:after {
+        content       : attr(data-text);
+        // font-size  : 18px;
+        position      : absolute;
+        top           : 0;
+        left          : 0;
+        background    : $body-bg;
+        padding       : 4px 15px;
+        display       : block;
+        width         : calc(100% - 40px);
+        pointer-events: none;
+        z-index       : 20;
+        height        : calc(1.5em + 1rem + 2px);
+        line-height   : 50px - 20px;
+        // color      : #fff;
+        border-radius : 5px 10px 10px 5px;
+        font-weight   : 400;
+        overflow      : hidden;
+    }
+
+    &:before {
+        content : 'Upload';
+        position: absolute;
+        top     : 0;
+        right   : 0;
+        display : inline-block;
+        height  : calc(1.5em + 1rem + 2px);
+        ;
+        background    : var(--primary);
+        color         : $white;
+        font-weight   : 400;
+        z-index       : 25;
+        font-size     : 14px;
+        line-height   : 40px;
+        padding       : 0 15px;
+        text-transform: capitalize;
+        pointer-events: none;
+        border-radius : 0 5px 5px 0;
+    }
+
+    &:hover {
+        &:before {
+            background: darken($primary, 10%);
+        }
+    }
+
+    input {
+        opacity : 0;
+        position: absolute;
+        top     : 0;
+        right   : 0;
+        bottom  : 0;
+        left    : 0;
+        z-index : 99;
+        height  : calc(1.5em + 1rem + 2px);
+        margin  : 0;
+        padding : 0;
+        display : block;
+        cursor  : pointer;
+        width   : 100%;
+    }
+}
+
+// Date picker
+#ui-datepicker-div {
+    display      : none;
+    background   : darken($body-bg, 2%);
+    box-shadow   : 0 0.125rem 0.5rem rgba(0, 0, 0, 0.1);
+    margin-top   : 0.25rem;
+    border-radius: 0.5rem;
+    padding      : 0.5rem;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing : 0;
+}
+
+.ui-datepicker-calendar {
+    thead th {
+        padding    : 0.25rem 0;
+        text-align : center;
+        font-size  : 0.75rem;
+        font-weight: 400;
+        color      : $body-color;
+    }
+
+    tbody td {
+        width     : 2.5rem;
+        text-align: center;
+        padding   : 0;
+
+        a {
+            display        : block;
+            border-radius  : 0.25rem;
+            line-height    : 2rem;
+            transition     : 0.3s all;
+            color          : $body-color;
+            font-size      : 0.875rem;
+            text-decoration: none;
+
+            &:hover {
+                background-color: var(--primary);
+                color           : white;
+            }
+
+            &.ui-state-active {
+                background-color: var(--primary);
+                color           : white;
+            }
+        }
+    }
+}
+
+.ui-datepicker-header a {
+    &.ui-corner-all {
+        cursor       : pointer;
+        position     : absolute;
+        top          : 0;
+        width        : 2rem;
+        height       : 2rem;
+        margin       : 0.5rem;
+        border-radius: 0.25rem;
+        transition   : 0.3s all;
+
+        &:hover {
+            background-color: lighten($primary, 30%);
+            color           : $white;
+        }
+    }
+
+    &.ui-datepicker-prev {
+        left               : 0;
+        background         : url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMyIgaGVpZ2h0PSIxMyIgdmlld0JveD0iMCAwIDEzIDEzIj48cGF0aCBmaWxsPSIjNDI0NzcwIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik03LjI4OCA2LjI5NkwzLjIwMiAyLjIxYS43MS43MSAwIDAgMSAuMDA3LS45OTljLjI4LS4yOC43MjUtLjI4Ljk5OS0uMDA3TDguODAzIDUuOGEuNjk1LjY5NSAwIDAgMSAuMjAyLjQ5Ni42OTUuNjk1IDAgMCAxLS4yMDIuNDk3bC00LjU5NSA0LjU5NWEuNzA0LjcwNCAwIDAgMS0xLS4wMDcuNzEuNzEgMCAwIDEtLjAwNi0uOTk5bDQuMDg2LTQuMDg2eiIvPjwvc3ZnPg==");
+        background-repeat  : no-repeat;
+        background-size    : 0.5rem;
+        background-position: 50%;
+        transform          : rotate(180deg);
+    }
+
+    &.ui-datepicker-next {
+        right              : 0;
+        background         : url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMyIgaGVpZ2h0PSIxMyIgdmlld0JveD0iMCAwIDEzIDEzIj48cGF0aCBmaWxsPSIjNDI0NzcwIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik03LjI4OCA2LjI5NkwzLjIwMiAyLjIxYS43MS43MSAwIDAgMSAuMDA3LS45OTljLjI4LS4yOC43MjUtLjI4Ljk5OS0uMDA3TDguODAzIDUuOGEuNjk1LjY5NSAwIDAgMSAuMjAyLjQ5Ni42OTUuNjk1IDAgMCAxLS4yMDIuNDk3bC00LjU5NSA0LjU5NWEuNzA0LjcwNCAwIDAgMS0xLS4wMDcuNzEuNzEgMCAwIDEtLjAwNi0uOTk5bDQuMDg2LTQuMDg2eiIvPjwvc3ZnPg==');
+        background-repeat  : no-repeat;
+        background-size    : 10px;
+        background-position: 50%;
+    }
+
+    >span {
+        display: none;
+    }
+}
+
+.ui-datepicker-title {
+    text-align    : center;
+    line-height   : 2rem;
+    margin-bottom : 0.25rem;
+    font-size     : 0.875rem;
+    font-weight  : 500;
+    padding-bottom: 0.25rem;
+}
+
+.ui-datepicker-week-col {
+    color      : $body-color;
+    font-weight: 400;
+    font-size  : 0.75rem;
+}
+
+// Validation Error
+label.error {
+    color        : $danger;
+    position     : absolute;
+    bottom       : 0;
+    margin-bottom: -22px;
+    font-size    : 12px;
+    font-weight  : 400;
+}
+
+// Nice Select
+.nice-select {
+    display                  : flex;
+    align-items              : center;
+    border-top-left-radius   : 3px !important;
+    border-bottom-left-radius: 3px !important;
+
+    ul {
+        width: 100% !important;
+    }
+}
+
+.nice-select .list {
+    background: $dark;
+}
+
+.nice-select .option:hover,
+.nice-select .option.focus,
+.nice-select .option.selected.focus {
+    background-color: $dark;
+    color           : var(--primary);
+}
+
+// Select Opting
+.form-select:not([class*="col-"]):not([class*="form-control"]):not(.input-group-btn) {
+    width: 100%;
+}
+.label-title{
+    font-weight: 500;
+    color: var(--secondary);
+    font-size: 16px;
+	margin-bottom:10px;
+}
+.form-select{
+	height		 : 48px;
+	border       : 1px solid rgba(0, 0, 0, 0.125);
+    padding      : 10px 20px;
+    font-size    : 15px;
+    font-weight  : 400;
+    color        : $headings-color;
+    transition   : all 0.3s ease-in-out;
+    background-color: $light;
+	.dropdown-toggle {
+		border: 0 !important;
+		padding: 0;
+		font-weight: normal;
+		text-transform: unset;
+		outline:none;
+		background-color:transparent;
+		&:focus {
+			outline: 0 !important;
+			outline: 0 !important;
+			outline-offset: 0!important;
+		}
+		&:hover, &:active{
+			background-color:transparent;
+		}
+		&:after{
+			content:none;
+		}
+	}
+	&.show {
+		box-shadow: none !important;
+		outline: 0px !important;
+		.dropdown-toggle {
+			box-shadow: none !important;
+			outline: 0px !important;
+		}
+		&.btn-group .dropdown-menu.inner{
+			display:block;
+		}	
+	}
+	.dropdown-menu {
+		border: 0;
+		border-radius: 0;
+		box-shadow: none;
+		margin-top: -1px;
+		padding: 10px 0;
+		box-shadow:0 15px 30px 0 rgba(0,0,0,0.2);
+		font-size:14px;
+		ul li {
+			padding: 0;
+			a {
+				display: block;
+				padding: 8px 20px;
+				clear: both;
+				font-weight: 400;
+				color: #333;
+				white-space: nowrap;
+				
+				img {
+					border-radius: 100%;
+					-webkit-border-radius: 100%;
+					margin-#{$dz-pos-right}: 5px;
+				}
+				&:hover {
+					background-color:#f2f2f4;
+				}
+			}
+			&.selected{
+				a{
+					background-color: var(--primary);
+					color: $white;
+				}
+			}
+		}
+	}
+	&:focus,
+    &:active,
+    &.active {
+        border-color: var(--primary);
+    }
+}
+.form-select.btn-group{
+	padding: 10px 20px;
+	border-width: 1px;
+	&.show{
+		box-shadow: 0 0px 10px 4px rgba(31, 66, 135, 0.1)!important;
+		border-color: var(--primary);
+	}
+	.form-control{
+		.dropdown-toggle{
+			&.btn-default{
+				padding: 0;
+			}
+		}
+	}
+	.dropdown-toggle{
+		.caret{
+			font-size: 10px;
+			top: 50%;
+			#{$dz-pos-right}: 5px;
+			transform: translateY(-50%);
+			&:before{
+				content: "\f078";
+			}
+		}
+	}
+}
+.custom-file-label{
+	box-shadow: 0 0px 10px 4px rgba(31, 66, 135, 0.1);
+	height: 45px;
+	border-radius: 30px!important;
+	padding: 10px 20px;
+	font-size: 15px;
+	border-color: transparent;
+	&:after{
+		content: none!important;
+	}
+}
+
+.dz-form{
+	&.radius-no{
+		.form-control{
+			border-radius:0;
+		}
+	}
+	&.style-1{
+		textarea{
+			height: 185px;
+			padding: 15px ​20px;
+		}
+	}
+}
+.form-check-input{
+	width: 1.125em;
+    height: 1.125em;
+    border: 2px solid rgba(0, 0, 0, 0.25);
+    border-radius: 0 !important;
+    margin: 4px;
+	&.radio{
+		border-radius:50%!important;
+		border: 1px solid #24262B;
+		&:checked[type="radio"]{
+			background-color: #0D775E;
+			border: 1px solid #0D775E;
+		}
+	}
+}
+.input-group {
+    margin-bottom: 20px;
+	overflow: hidden;
+}
+.wpcf7-form{
+	.row{
+	    --bs-gutter-x: 20px;
+	}
+}
+.checkout-form{
+	margin-bottom: 40px;
+	.form-label{
+		font-size: 14px;
+		font-weight: 600;
+		color: var(--primary);
+	}
+	.form-control{
+		background: none;
+		border: 1px solid transparent;
+		border-bottom: 2px solid #E1E1E1;
+		border-radius: 0;
+		padding: 10px 0;
+		&::placeholder {
+			font-weight: 400;
+			font-size: 15px;
+			color: var(--seconday);
+		}
+	}
+}
+.pay-bottom{
+	padding-bottom: 55px;
+    border-bottom: 2px dashed #AAAAAA;
+	.money-type{
+		position:relative;
+		text-align:center;
+		
+		.form-check{
+			border: 1px solid #F0F0F0;
+			border-radius:var(--border-radius-base);
+			padding-#{$dz-pos-left}: 0;
+			.form-check-input{
+			
+				position: absolute;
+				#{$dz-pos-right}: 15px;
+				top: 15px;
+				
+				&:checked + .form-check-label {
+					background-color: #FFF0DF;
+					border:1px solid var(--primary);
+					border-radius:var(--border-radius-base);
+					i{
+						color:var(--primary);
+					}
+				}
+			}
+			.form-check-label{
+				width:100%;
+				margin: 0!important;
+				padding:10px 10px;
+			}	
+			.payment-check{
+				i{
+					font-size:68px;
+				}
+			}
+		}
+	}
+}
+.input-group-text{
+	&.checkout-text{
+		background: none;
+		border-color: transparent;
+		position: relative;
+		#{$dz-pos-right}: 60px;
+		i{
+			font-size:20px;
+			font-weight:600;
+		}
+	}
+}
+.form-control {
+	&.default-select{
+		.btn{
+			background: transparent;
+			border-width: 0 0 2px;
+			border-radius: 0;
+			padding: 15px 10px!important;
+			border-color: #E1E1E1;
+			padding: 10px 20px;
+			&:focus{
+				outline: 0!important;
+			}
+		}
+		.filter-option-inner-inner {
+			font-weight: 600;
+			font-size: 16px;
+		}
+	}
+}
+
+// Radio Button ====
+.form-check{
+	padding-#{$dz-pos-left}: 0;
+	padding-#{$dz-pos-right}: 0;
+	span{
+		height: 1rem;
+		margin-#{$dz-pos-right}: 15px;
+		width: 1rem;
+		display:block;
+		background-color: $secondary;
+		position: relative;
+		border-radius: 50%;
+		z-index: 1;
+		&:after{
+			content: "";
+			position: absolute;
+			top: 50%;
+			#{$dz-pos-left}: 50%;
+			width: 28px;
+			height: 28px;
+			background-color: transparent;
+			border: 1px solid rgb(36, 38, 43);
+			border-radius: 50%;
+			opacity: 0.2;
+			transform: translate(-50%, -50%) scale(0);
+			z-index: -1;
+		}
+	}
+	.form-check-input{
+		opacity: 0;
+		position: relative;
+		z-index: 2;
+		margin-#{$dz-pos-left}: 0;
+		margin-top: 0;
+	}
+	.form-check-input:checked + span {
+		&:after{
+			transform: translate(-50%, -50%) scale(1);
+		}
+	}
+}
+
+
+.shop-form{
+	.form-group{
+		margin-bottom:25px;
+		input{
+			padding: 17px 20px;
+			height: 50px;
+			font-size: 15px;
+			border: none;
+			color: #666666;
+			background: #F3F3F3;
+		}
+		.input-group-addon {
+			position: absolute;
+			#{$dz-pos-right}: 0px;
+			top: 50%;
+			z-index: 9;
+			transform: translateY(-50%);
+			.coupon{
+				color: #24262B;
+				font-family: 'DM Sans';
+				font-weight: 700;
+				padding:10px 15px;
+				font-size: 15px;
+				position: relative;
+				z-index: 2;
+				border:0;
+			}
+		}
+		.bootstrap-select{
+			width:100% !important;
+			.btn{
+				font-weight:300;
+				color: #000;
+				&.btn-light{
+					border:1px solid rgba(0, 0, 0, 0.125);
+					&:hover{
+						background-color:rgb(245, 245, 245);
+						border-color:1px solid rgba(0, 0, 0, 0.125);
+					}
+					&:focus{
+						outline:0 !important;
+					}
+				}
+			}
+		}
+	}
+	.btn{
+		&.btn-grey{
+			background:rgba(36, 38, 43, 0.5);
+			text-transform: uppercase;
+			color:#fff;
+		}
+	}
+	@include respond('tab-port'){	
+		margin-top:25px;
+	}
+}
+
+
+.dz-ajax-overlay{
+	position: relative;
+	.btn:before{
+		content: "";
+		height: 100%;
+		width: 100%;
+		background-color: #000;
+		position: absolute;
+		#{$dz-pos-left}: 0;
+		top: 0;
+		z-index: 99;
+		border-radius: 0;
+		opacity: 0.8;
+		color: #fff;
+		text-transform: uppercase;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		letter-spacing: 2px;
+		font-weight: 500;
+		font-size: 14px;
+		font-style: italic;
+		background-image:url('data:image/svg+xml,<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="24px" height="30px" viewBox="0 0 24 30" style="enable-background:new 0 0 50 50;" xml:space="preserve"> <rect x="0" y="13" width="4" height="5" fill="%23fff"> <animate attributeName="height" attributeType="XML" values="5;21;5" begin="0s" dur="0.6s" repeatCount="indefinite"></animate> <animate attributeName="y" attributeType="XML" values="13; 5; 13" begin="0s" dur="0.6s" repeatCount="indefinite"></animate> </rect> <rect x="10" y="13" width="4" height="5" fill="%23fff"> <animate attributeName="height" attributeType="XML" values="5;21;5" begin="0.15s" dur="0.6s" repeatCount="indefinite"></animate> <animate attributeName="y" attributeType="XML" values="13; 5; 13" begin="0.15s" dur="0.6s" repeatCount="indefinite"></animate> </rect> <rect x="20" y="13" width="4" height="5" fill="%23fff"> <animate attributeName="height" attributeType="XML" values="5;21;5" begin="0.3s" dur="0.6s" repeatCount="indefinite"></animate> <animate attributeName="y" attributeType="XML" values="13; 5; 13" begin="0.3s" dur="0.6s" repeatCount="indefinite"></animate> </rect> </svg>');
+		background-repeat:no-repeat; 
+		background-position:center;
+		background-size:18px;
+	}
+}
+
+// Left To Right =====
+@-webkit-keyframes toLeftFromRight {
+	49% {
+		-webkit-transform: translateX(100%);
+	}
+	50% {
+		opacity: 0;
+		-webkit-transform: translateX(-100%);
+	}
+	51% {
+
+		opacity: 1;
+	}
+}
+@-moz-keyframes toLeftFromRight {
+	49% {
+		-moz-transform: translateX(100%);
+	}
+	50% {
+		opacity: 0;
+		-moz-transform: translateX(-100%);
+	}
+	51% {
+		opacity: 1;
+	}
+}
+@keyframes toLeftFromRight {
+	49% {
+		transform: translateX(100%);
+	}
+	50% {
+		opacity: 0;
+		transform: translateX(-100%);
+	}
+	51% {
+		opacity: 1;
+	}
+}
+
+
+// Right To Left =====
+@-webkit-keyframes toBottomFromTop {
+	49% {
+		-webkit-transform: translateY(-100%);
+	}
+	50% {
+		opacity: 0;
+		-webkit-transform: translateY(100%);
+	}
+	51% {
+
+		opacity: 1;
+	}
+}
+@-moz-keyframes toBottomFromTop {
+	49% {
+		-webkit-transform: translateY(-100%);
+	}
+	50% {
+		opacity: 0;
+		-webkit-transform: translateY(100%);
+	}
+	51% {
+
+		opacity: 1;
+	}
+}
+@keyframes toBottomFromTop {
+	49% {
+		-webkit-transform: translateY(-100%);
+	}
+	50% {
+		opacity: 0;
+		-webkit-transform: translateY(100%);
+	}
+	51% {
+
+		opacity: 1;
+	}
+}

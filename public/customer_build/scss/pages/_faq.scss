@@ -1,0 +1,129 @@
+.faq-head{
+	margin-bottom:60px;
+	.input-group{
+		max-width:400px;
+		margin:auto;
+	}
+	@include respond ('tab-land'){
+		margin-bottom:30px;
+	}
+	@include respond ('phone'){
+		margin-bottom:20px;
+	}
+}
+.main-faq-content{
+	position: relative;
+	padding-top:55px;
+	@include respond ('laptop'){
+		padding-top:40px;
+	}
+}
+
+.faq-content-box{
+	position:relative;
+	&.style-1{
+		padding:40px 30px 30px;
+		display: flex;
+		flex-direction: column;
+		height:100%;
+		min-height:305px;
+		&.light{
+			background: #F6F6F6;
+		}
+		&.dark{
+			background: #24262B;
+			.dz-title{
+				color:#fff;
+			}
+			p{
+				color:#fff;
+				opacity:0.7;
+			}
+			.faq-link{
+				color:#fff;
+				
+			}
+		}
+		.dz-title{
+			font-family: var(--font-family-title);
+			font-size: 24px;
+			font-weight: 700;
+			line-height:1;
+			margin-bottom:20px;
+		}
+		p{
+			font-family: var(--font-family-base);
+			font-size: 16px;
+			font-weight: 400;
+			line-height:1.8;
+			margin-bottom:30px;
+		}
+		.faq-link{
+			display:flex;
+			align-items:center;
+			font-family: var(--font-family-title);
+			font-size: 15px;
+			font-weight: 500;
+			color:var(--title);
+			margin-top: auto;
+			svg{
+				margin-#{$dz-pos-right}:8px;
+			}
+		}
+		@include respond ('tab-port'){
+			min-height:250px;
+			padding:25px 20px;
+			.dz-title{				
+				font-size: 18px;
+			}
+			p{
+				font-size: 14px;
+			}
+		}
+		@include respond ('phone'){
+			.dz-title{
+				font-size: 20px;
+				margin-bottom: 15px;
+			}
+			.faq-link{
+				font-size: 14px;
+			}
+		}
+	}
+}
+
+.faq-side-content{
+	background: #F6F6F6;
+	padding:130px 75px 75px;
+	display: flex;
+	flex-direction: column;
+	@include respond ('laptop'){
+		padding:130px 60px 70px;
+	}
+	@include custommq($max:1200px, $min:1024px){
+		padding: 130px 30px 70px;
+	}
+	@include respond ('phone-land'){
+		padding: 100px 20px 40px;
+	}
+}
+.faq-end-content{
+	padding:120px 150px 45px;
+	display:flex;
+	flex-direction:column;
+	@include respond ('laptop'){
+		padding: 130px 60px 70px;
+	}
+	@include custommq($max:1200px, $min:1024px){
+		padding: 130px 30px 70px;
+	}
+	@include respond ('tab-port'){
+		padding: 50px 60px 70px;
+	}
+	@include respond ('phone-land'){
+		padding: 30px 20px 20px;
+	}
+	@include respond ('phone'){
+		padding: 20px 20px 10px;
+	}
+}

@@ -1,0 +1,71 @@
+.about-style3{
+	.section-head{
+		margin-bottom: 50px;
+		.title{
+			margin-bottom: 10px;
+			font-size: 28px;
+			font-weight: 700;
+		}
+		p {
+			line-height: 1.7;
+			color: $body-color;
+			margin-bottom:20px;
+			@include respond('phone'){
+				text-align: justify;
+			}
+		}
+		@include respond('phone'){
+			.title{
+				font-size: 24px;
+				margin-bottom: 5px;
+			}	
+		}	
+		@include respond('phone'){
+			margin-bottom: 20px;			
+		}
+	}
+	.about-thumb {
+		position: relative;
+		overflow: hidden;
+		background:#929292;
+		height: auto;
+	}
+}
+
+
+.exp-head{
+	.counter-num{
+		h2{
+			font-size:60px;
+			font-weight:700;
+			line-height: 1.2;
+		}
+	}
+	@include respond('tab-land'){
+		.counter-num{
+			h2{
+				font-size:52px;
+			}
+		}	
+	}
+	@include respond('phone-land'){
+		.counter-num{
+			h2{
+				font-size:44px;
+			}
+		}	
+		.counter-title{
+			font-size: 15px;
+		}
+	}
+	@include respond('phone'){
+		.counter-num{
+			h2{
+				font-size:34px;
+			}
+		}	
+		.counter-title{
+			font-size: 14px;
+		}
+	}
+}

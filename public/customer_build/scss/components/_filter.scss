@@ -1,0 +1,136 @@
+// FILTER BUTTONS CSS
+.site-filters {
+    margin-bottom: 20px;
+	.product-link{
+		margin-#{$dz-pos-left}: auto;
+	}
+	ul {
+		margin: 0;
+		list-style: none;
+	}
+	li {
+		display: inline-block;
+		padding:0;
+		margin-bottom: 5px;
+		margin-#{$dz-pos-right}: 30px;
+		
+		&.btn {
+			box-shadow: none;
+			-webkit-box-shadow: none;
+			outline: none !important;
+			border: 0;
+		}
+		input {
+			display: none;
+		}
+		a {
+			margin: 0;
+			display: inline-flex;
+			font-size: 15px;
+			font-weight: 400;
+			text-transform: uppercase;
+			color: var(--title);
+			font-family: var(--font-family-base);
+			span{					
+				font-size: 14px;
+				color: $body-color;
+				margin-#{$dz-pos-left}: 4px;
+			}
+		}
+		&.active{
+			a{
+				color: var(--primary);
+			}
+		}
+		
+	}
+	@include respond ('tab-port'){
+		ul{
+			li{
+				a{
+					font-size: 14px;
+				}
+			}
+		}
+	}
+	@include respond ('phone-land'){
+		flex-direction: column;
+		margin-bottom: 15px;
+		ul{
+			margin-bottom: 10px;	
+		}
+		.product-link{
+			margin-#{$dz-pos-left}: 0;
+			margin-#{$dz-pos-right}: auto;
+		}
+	}
+	&.center{
+		text-align: center;
+		ul {
+			display: inline-block;
+			margin: auto;
+		}
+		[class*="btn"] {
+			display: inline-block;
+			margin: 0 5px 10px;
+			text-transform: uppercase;
+			@include respond('phone'){
+				margin: 0 1px 5px;
+				padding: 5px 10px;
+				font-size: 12px;
+			}
+		}
+	}
+	//style-1
+	&.style-1{
+		border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+		margin-bottom:60px;
+		li{
+			a{
+				font-weight:500;
+				color: #5E626F;
+				text-transform: capitalize;
+				line-height: 24px;
+			}
+			&.active{
+				a{
+					color: var(--primary);
+				}
+			}
+		}
+		@include respond('phone'){
+			margin-bottom:40px;
+		}
+	}
+	//style-2
+	&.style-2{
+		border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+		margin-bottom:60px;
+		li{
+			margin: 0 !important;
+			a{
+				padding: 23px 15px;
+				font-weight:400;
+				color: #5E626F;
+				text-transform: capitalize;
+			}
+			&.active{
+				a{
+					color: var(--primary);
+				}
+			}
+		}
+		@include respond('phone'){
+			margin-bottom:40px;
+			li{
+				padding:0 !important;
+				a{
+					margin: 0 1px 5px;
+					padding: 5px 10px;
+				}
+			}
+		}
+	}
+}
+
+

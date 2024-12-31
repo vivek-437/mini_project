@@ -1,0 +1,199 @@
+.dz-search-area{
+	padding: 50px 0;
+	&.offcanvas{
+		overflow: auto;
+		height: 580px;
+	}
+	.header-item-search{
+		display: block;
+		margin-#{$dz-pos-left}: 0;
+		height: unset;
+		padding: 0;
+		margin-bottom: 50px;
+		.form-control{
+			background-color: transparent;
+			font-family: var(--font-family-title);
+		}
+	}
+	.search-input{
+		border-bottom: 2px solid var(--secondary);
+		padding-bottom: 8px;
+		.form-control {
+			border: 0;
+			margin-#{$dz-pos-left}: 0px!important;
+			border-radius: 0!important;
+			height: 45px;
+			font-size: 20px;
+			font-family: var(--font-family-title);
+			&:focus{
+				box-shadow: unset;
+			}
+		}
+		.bootstrap-select.default-select{
+			&:after{
+				height: 35px;
+			}
+			.dropdown-toggle{
+				background-color: transparent;
+				padding: 0px 25px 0px 0px;
+				font-size: 20px;
+				min-width: 270px;
+				font-family: var(--font-family-title);
+				&:after{
+					content: "\f078";
+					width: 28px;
+					height: 28px;
+					display: flex;
+					font-size: 14px;
+					align-items: center;
+					justify-content: center;
+					opacity: 1;
+				}
+			}
+			.dropdown-menu{
+				min-width: 100%!important;
+				.dropdown-item{
+					&.active,
+					&:active,
+					&:hover{
+						color: var(--title);
+					}
+				}
+			}
+		}
+		.btn{
+			height: unset;
+			width: unset;
+		}
+	}
+	.recent-tag{
+		display: flex;
+		align-items: center;
+		flex-wrap: wrap;
+		padding: 10px 0;
+		margin: 0 -15px;
+		li{
+			font-size: 15px;
+			padding: 5px 15px;
+			color: var(--title);			
+			span{
+				font-family: var(--font-family-title);
+				color: $body-color;
+			}
+		}
+	}
+	@include respond('tab-port'){
+		.search-input{
+			padding-bottom: 5px;
+			border-bottom-width: 1px;
+			.bootstrap-select.default-select{
+				.dropdown-toggle{
+					padding: 0px 15px 0px 0px;
+					font-size: 16px;
+					min-width: 180px;
+				}
+			}
+			.form-control{
+				font-size: 16px;
+			}
+		}
+		.recent-tag{
+			margin: 0px -10px;
+			li{
+				padding: 5px 10px;
+				font-size: 14px;
+			}
+		}
+	}
+	@include respond('phone-land'){
+		padding: 30px 0 0;
+		&.offcanvas{
+			height: 470px;
+		}
+		.header-item-search{
+			margin-bottom: 20px;
+		}
+	}
+	@include respond('phone'){
+		&.offcanvas{
+			height: 440px;
+		}
+		.search-input{
+			padding-bottom: 0px;
+			.bootstrap-select.default-select{
+				&:after{
+					height: 25px;
+				}
+				.dropdown-toggle{
+					padding: 0 15px 0 0;
+					font-size: 14px;
+					min-width: 100%;
+					&:after{
+						width: 20px;
+						height: 20px
+					}
+				}
+			}
+			.form-control{
+				font-size: 14px;
+				padding: 10px 15px;
+			}
+			.btn{
+				svg{
+					width: 16px;
+					height: 16px;
+				}
+			}
+		}
+		.recent-tag{
+			padding: 5px 0;
+			li{
+				padding: 2px 10px;
+				font-size: 14px;
+			}
+		}
+	}
+}
+
+// OFFCANVAS ====
+.dz-offcanvas{
+	&.offcanvas{
+		.btn-close{
+			--bs-btn-close-bg: none;
+			padding: 0;
+			width: 40px;
+			height: 40px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			min-height: 40px;
+			position: absolute;
+			top: 5px;
+			font-weight: 200;
+			#{$dz-pos-right}: 5px;
+			font-size: 40px;
+			opacity: 0.5;
+			&:focus{
+				box-shadow: unset;
+			}
+			@include respond('phone'){
+				font-size: 32px;
+				top: 0;
+				#{$dz-pos-right}: 0;
+			}
+		}
+		&.offcanvas-end,
+		&.offcanvas-top{
+			border: 0;
+		}
+		&.offcanvas-end{
+			width: 485px;
+			.offcanvas-body{
+				padding: 60px 75px;
+				@include respond('phone'){
+					padding: 50px 15px;					
+				}
+			}
+		}
+	}
+}

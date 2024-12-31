@@ -1,0 +1,70 @@
+.badge{
+	padding: 5px 10px;
+    font-weight: var(--headings-font-weight);
+    background-color: var(--primary);
+    color: rgb(255, 255, 255);
+    border-radius: 0;
+    font-family: var(--font-family-base);
+    font-size: 12px;
+    min-width: 22px;
+    min-height: 22px;
+	text-transform: uppercase;
+    text-align: center;
+	&:hover{
+		color:#fff;
+	}
+	&.badge-primary{
+		background-color: var(--primary);
+	}
+	&.badge-secondary{
+		background-color: $secondary;
+	}
+	&.badge-info{
+		background-color: $info;		
+	}
+	&.badge-success{
+		background-color: $success;
+	}
+	&.badge-warning{
+		background-color: $warning;
+	}
+	&.badge-danger{
+		background-color: $danger;		
+	}
+	&.badge-light{
+		background-color: $light;
+	}
+	&.badge-circle{
+		border-radius: 50%;
+	}
+	&.style-1{
+		padding: 6px 12px;
+		font-size: 14px;
+		font-weight: 400;
+		min-height: unset;
+		color: var(--title);
+		background-color: $white;
+		text-transform: capitalize;
+	}
+}
+
+
+
+
+
+.bg-purple{
+	background-color: #5E5CC6;
+	color: #fff;
+}
+.bg-red{
+	background-color: #EB5757;
+	color: #fff;
+}
+.bg-orange{
+	background-color: #CD9B60;
+	color: #fff;
+}
+.bg-green{
+	background-color: #24262B;
+	color: #fff;
+}

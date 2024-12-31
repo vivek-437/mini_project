@@ -1,0 +1,131 @@
+.registration-media{
+	text-align: $dz-pos-right;
+	position: relative;
+	z-index: -1;
+	margin: auto;
+	margin-top: -90px;
+	
+	@include respond('laptop'){
+		margin-top:0;
+	}
+	
+	@include custommq($max:991px, $min:300px){
+		position: absolute;
+		margin-top: 0px;
+		#{$dz-pos-right}: 10%;
+		bottom: 0;
+	}
+
+	@include respond('phone'){
+		#{$dz-pos-right}: 5%;
+	}
+	
+	img{
+		@include respond('laptop'){
+			height: 600px;
+			width: 100%;
+			object-fit: contain;
+			object-position: bottom;
+		}
+		@include respond('tab-port'){
+			height: auto;
+		}
+		@include custommq($max:991px, $min:300px){
+			height: 280px;
+			object-fit: contain;
+		}
+		@include respond('phone-land'){
+			height:240px;
+		}
+	}
+}
+.start-side-content{
+	padding:120px 80px 0 80px;
+	position:relative;
+	background:#F6F6F6;
+	z-index: 1;
+	&:after{
+		content: "";
+		position: absolute;
+		bottom: 0px;
+		#{$dz-pos-left}: 16%;
+		width: 51%;
+		height:60%;
+		background: rgb(255, 255, 255);
+		border-radius: 50% 50% 0px 0px;
+		z-index: -2;
+	}
+	@include custommq($max:991px, $min:300px){
+		padding:120px 80px 80px 80px;
+		height: 400px;
+		display: flex;
+		align-items: center;
+		&:after{
+			#{$dz-pos-left}: auto;
+			width: 200px;
+			height: 250px;
+			#{$dz-pos-right}: 12%;
+		}
+	}
+	@include respond('tab-land'){
+	    padding: 120px 20px 0px;
+	}
+	@include respond('tab-port'){
+	    padding: 120px 15px 0px;
+	}
+	@include respond('phone-land'){
+		padding:120px 30px 80px 30px;
+		height:330px;
+		.dz-bnr-inr-entry{
+			h1{
+				font-size:26px;
+				line-height: 1.1;
+			}
+		}
+		&:after{
+			width: 160px;
+			height: 218px;
+			#{$dz-pos-right}: 4%;
+		}
+	}
+	@include respond('phone'){
+		padding:120px 15px 80px 15px;
+	}
+}
+.end-side-content{
+	padding: 120px 80px 80px 80px;
+	display: flex;
+	flex-direction: column;
+	@include custommq($max:1024px, $min:300px){
+		padding:80px;
+	}
+	@include respond('phone-land'){
+		padding:60px;
+	}
+	@include respond('phone'){
+		padding:30px 15px 30px;
+	}
+}
+
+.login-area{
+	border:1px solid var(--border-color);
+    padding: 80px;	
+	max-width:522px;
+	margin:auto;
+	background:#fff;
+	width: 100%;
+	@include respond('tab-land'){
+		padding: 30px;	
+	}
+	@include respond('phone'){
+		padding: 15px;
+	}
+	form{
+		.label-title{
+			margin-bottom:5px;
+			font-weight: 500;
+			font-family:var(--font-family-title);
+			font-size: 16px;
+		}
+	}
+}

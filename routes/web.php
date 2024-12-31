@@ -19,12 +19,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
+Route::get('/dashboard', function () {
     return view('admin.dashboard');
 })->name('dashboard');
 
 
-
+// ----------------------------------Admin----------------------------------------------------
 Route::controller(CategoriesController::class)->group(function () {
     Route::get('categories', 'index')->name('categories.list');
     Route::get('categories/create', 'create')->name('categories.create');
@@ -61,5 +61,11 @@ Route::controller(ProductVariantImagesController::class)->group(function () {
     Route::get('/product_variant_images', 'index')->name('product-variant-images');
     Route::get('product_variant_images/create', 'create')->name('product-variant-images.create');
     Route::post('product_variant_images/store', 'store')->name('product-variant-images.store');
-    Route::get('/product_variant_images/attribute-values/{id}','getAttributeValues')->name('product-variant-images.attribute-values');
+    Route::get('/product_variant_images/attribute-values/{id}', 'getAttributeValues')->name('product-variant-images.attribute-values');
 });
+
+
+// ----------------------------------customer--------------------------------------------------
+Route::get('/', function () {
+    return view('cutomer.customer-product-detail');
+})->name('dashboard');

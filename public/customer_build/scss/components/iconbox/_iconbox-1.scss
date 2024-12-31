@@ -1,0 +1,252 @@
+.icon-bx-wraper{
+	
+	// Style 1
+	&.style-1{
+		.icon-bx{
+			margin: 0 auto 10px;
+			width: 65px;
+			height: 65px;
+			display: flex;
+			align-items: center;
+			color: var(--primary);
+			font-size: 65px;
+			justify-content: center;
+			i{
+				display: flex;
+			}
+		}
+		p{
+			color: $body-color;
+			font-size: 16px;
+			max-width: 270px;
+			margin-#{$dz-pos-left}: auto;
+			margin-#{$dz-pos-right}: auto;
+			text-transform: capitalize;
+		}
+		.dz-title{
+			font-weight: 400;
+			letter-spacing: 1.5px;
+		}
+		.square{
+			width: 8px;
+			height: 8px;
+			border: 1px solid var(--primary);
+			transform: rotate(45deg);
+			margin: 15px auto;
+		}
+		@include respond('phone-land'){
+			.icon-bx{
+				margin-bottom: 10px;
+				width: 50px;
+				height: 50px;
+				font-size: 50px;
+				margin-#{$dz-pos-left}: auto;
+				margin-#{$dz-pos-right}: auto;
+			}
+			.square{
+				margin: 6px auto;
+				width: 5px;
+				height: 5px;
+			}
+			.dz-title{
+				font-size: 16px;
+			}
+			p{
+				font-size: 13px;
+			}
+		}
+	}
+	
+	// Style 2
+	&.style-2{
+		display: flex;
+		align-items: center;
+		padding: 40px;
+		overflow: hidden;
+		height: 100%;
+		.icon-bx{
+			margin-#{$dz-pos-right}: 24px;
+		}
+		.dz-title{
+			font-weight: 500;
+			margin-bottom: 10px;
+		}
+		p{
+			max-width: 250px;
+			font-size: 15px;
+		}
+		.data-text{
+			position: absolute;
+			bottom: -15px;
+			#{$dz-pos-right}: -5px;
+			font-size: 100px;
+			line-height: 100px;
+			font-weight: 700;
+			color: var(--title);
+			font-family: var(--font-family-title);
+			opacity: 0.1;
+			@include transitionFast;
+		}
+		&:nth-child(odd){
+			background-color: #F8F8F8;	
+		}
+		@include respond('laptop'){
+			padding: 25px;
+		}
+		@include respond('tab-land'){
+			padding: 20px;
+			.icon-bx{
+				margin-#{$dz-pos-right}: 15px;
+			}
+			.dz-title{
+				margin-bottom: 5px;
+				font-size: 18px;
+			}
+			p{
+				font-size: 14px;				
+			}
+			.data-text{
+				font-size: 80px;
+				line-height: 85px;
+			}
+		}
+		@include respond('phone'){
+			padding: 25px;
+			/* .data-text{
+				font-size: 80px;
+				line-height: 85px;
+			} */
+		}
+		&:hover{
+			.data-text{
+				transform:scale(1.3) rotate(-15deg);
+			}
+		}
+	}
+	
+	// Style 3
+	&.style-3{
+		display: flex;
+		align-items: center;
+		overflow: hidden;
+		.icon-bx{
+			margin-#{$dz-pos-right}: 15px;
+			min-width: 50px;
+			height: 50px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			i{
+				font-size: 46px;
+				color: #ABABAB;
+			}
+		}
+		.dz-title{
+			font-weight: 500;
+		}
+		span{
+			font-size: 13px;
+			color: var(--primary);
+		}
+		.data-text{
+			position: absolute;
+			bottom: -15px;
+			#{$dz-pos-right}: -5px;
+			font-size: 100px;
+			line-height: 100px;
+			font-weight: 700;
+			color: var(--title);
+			font-family: var(--font-family-title);
+			opacity: 0.1;
+		}
+		@include respond('phone'){
+			padding: 25px 25px;
+			.data-text{
+				font-size: 80px;
+				line-height: 85px;
+			}
+		}
+	}
+	
+	// Style-4
+	&.style-4{
+		background: #FFFFFF;
+		border: 1px solid rgba(0, 0, 0, 0.2);
+		padding:20px 25px;
+		display:flex;
+		align-items:center;
+		.icon-bx{
+			min-width: 50px;
+			height: 50px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			i{
+				font-size: 46px;
+				color: #ABABAB;
+			}
+		}
+		.icon-content{
+			margin-#{$dz-pos-left}:20px;
+			p{
+				font-size:14px;
+			}
+		}
+	}
+}
+
+//MAXIMIZE ICON SCSS ====
+.dz-maximize{
+	width: 40px;	
+	height: 40px;	
+	display: flex;
+	align-items: center;	
+	justify-content: center;
+	background-color: $white;
+	font-size: 24px;
+	color: var(--title);
+	@include transitionMedium;
+	&.top-left{
+		position: absolute;
+		top: 20px;
+		#{$dz-pos-left}: 20px;
+	}
+	&.top-right{
+		position: absolute;
+		top: 20px;
+		#{$dz-pos-right}: 20px;
+	}
+	&.bottom-left{
+		position: absolute;
+		bottom: 20px;
+		#{$dz-pos-left}: 20px;
+	}
+	&.bottom-right{
+		position: absolute;
+		bottom: 20px;
+		#{$dz-pos-right}: 20px;
+	}
+	@include respond('phone'){
+		width: 30px;
+		height: 30px;
+		font-size: 18px;
+		&.top-left{
+			top: 10px;
+			#{$dz-pos-left}: 10px;
+		}
+		&.top-right{
+			top: 10px;
+			#{$dz-pos-right}: 10px;
+		}
+		&.bottom-left{
+			bottom: 10px;
+			#{$dz-pos-left}: 10px;
+		}
+		&.bottom-right{
+			bottom: 10px;
+			#{$dz-pos-right}: 10px;
+		}
+	}
+}
+
+

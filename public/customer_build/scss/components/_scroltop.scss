@@ -1,0 +1,64 @@
+// Scroltop
+.scroltop {
+	background: var(--secondary);
+	bottom: 30px;
+	color: #fff !important;
+	cursor: pointer;
+	display: none;
+	height: 40px;
+	line-height: 40px;
+	margin: 0;
+	position: fixed;
+	#{$dz-pos-right}: 30px;
+	text-align: center;
+	width: 40px;
+	z-index: 999;
+	box-shadow: 0px 10px 20px 0 rgba(0,0,0,0.2);
+	border:0;
+	
+	
+	&:hover i{
+		-webkit-animation: toTopFromBottom 0.8s forwards;
+		-moz-animation: toTopFromBottom 0.8s forwards;
+		animation: toTopFromBottom 0.8s forwards;
+	}
+}
+.icon-up i{
+	display:inline-block;
+}
+@-webkit-keyframes toTopFromBottom {
+	49% {
+		-webkit-transform: translateY(-100%);
+	}
+	50% {
+		opacity: 0;
+		-webkit-transform: translateY(100%);
+	}
+	51% {
+		opacity: 1;
+	}
+}
+@-moz-keyframes toTopFromBottom {
+	49% {
+		-moz-transform: translateY(-100%);
+	}
+	50% {
+		opacity: 0;
+		-moz-transform: translateY(100%);
+	}
+	51% {
+		opacity: 1;
+	}
+}
+@keyframes toTopFromBottom {
+	49% {
+		transform: translateY(-100%);
+	}
+	50% {
+		opacity: 0;
+		transform: translateY(100%);
+	}
+	51% {
+		opacity: 1;
+	}
+}

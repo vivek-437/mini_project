@@ -1,0 +1,22 @@
+<!-- JAVASCRIPT FILES ========================================= -->
+<script src="{{ URL::asset('customer_build/js/jquery.min.js')}}"></script><!-- JQUERY MIN JS -->
+<script src="{{ URL::asset('customer_build/vendor/wow/wow.min.js')}}"></script><!-- WOW JS -->
+<script src="{{ URL::asset('customer_build/vendor/bootstrap/dist/js/bootstrap.bundle.min.js')}}"></script><!-- BOOTSTRAP MIN JS -->
+<script src="{{ URL::asset('customer_build/vendor/bootstrap-select/dist/js/bootstrap-select.min.js')}}"></script><!-- BOOTSTRAP SELECT MIN JS -->
+<script src="{{ URL::asset('customer_build/vendor/bootstrap-touchspin/bootstrap-touchspin.js')}}"></script><!-- BOOTSTRAP TOUCHSPIN JS -->
+<script src="{{ URL::asset('customer_build/vendor/counter/waypoints-min.js')}}"></script><!-- WAYPOINTS JS -->
+<script src="{{ URL::asset('customer_build/vendor/counter/counterup.min.js')}}"></script><!-- COUNTERUP JS -->
+<script src="{{ URL::asset('customer_build/vendor/swiper/swiper-bundle.min.js')}}"></script><!-- SWIPER JS -->
+<script src="{{ URL::asset('customer_build/vendor/imagesloaded/imagesloaded.js')}}"></script><!-- IMAGESLOADED-->
+<script src="{{ URL::asset('customer_build/vendor/imagesloaded/imagesloaded.js')}}"></script><!-- IMAGESLOADED-->
+<script src="{{ URL::asset('customer_build/vendor/masonry/masonry-4.2.2.js')}}"></script><!-- MASONRY -->
+<script src="{{ URL::asset('customer_build/vendor/masonry/isotope.pkgd.min.js')}}"></script><!-- ISOTOPE -->
+<script src="{{ URL::asset('customer_build/vendor/countdown/jquery.countdown.js')}}"></script><!-- COUNTDOWN FUCTIONS  -->
+<script src="{{ URL::asset('customer_build/vendor/wnumb/wNumb.js')}}"></script><!-- WNUMB -->
+<script src="{{ URL::asset('customer_build/vendor/nouislider/nouislider.min.js')}}"></script><!-- NOUSLIDER MIN JS-->
+<script src="{{ URL::asset('customer_build/js/dz.carousel.js')}}"></script><!-- DZ CAROUSEL JS -->
+<script src="{{ URL::asset('customer_build/vendor/lightgallery/dist/lightgallery.min.js')}}"></script>
+<script src="{{ URL::asset('customer_build/vendor/lightgallery/dist/plugins/thumbnail/lg-thumbnail.min.js')}}"></script>
+<script src="{{ URL::asset('customer_build/vendor/lightgallery/dist/plugins/zoom/lg-zoom.min.js')}}"></script>
+<script src="{{ URL::asset('customer_build/js/dz.ajax.js')}}"></script><!-- AJAX -->
+<script src="{{ URL::asset('customer_build/js/custom.js')}}"></script><!-- CUSTOM JS -->

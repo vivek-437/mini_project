@@ -1,0 +1,249 @@
+.error-page{
+	position:relative;
+	.bg-img, .bg-img2{
+		position: absolute;
+		bottom: -30px;
+		#{$dz-pos-left}: 0;
+	}
+	.bg-img2{
+		#{$dz-pos-right}: 0px;
+		top: -50px;
+		#{$dz-pos-left}:auto;
+		bottom:auto;
+	}
+	@include respond('laptop'){
+		.bg-img{
+			bottom: -16%;
+			#{$dz-pos-left}: -5%;
+		}
+		.bg-img2{
+			#{$dz-pos-right}: -6%;
+			top: -16%;
+		}
+	}
+	@include respond('tab-port'){
+		.bg-img, .bg-img2{
+			display:none;
+		}
+	}
+	&.style-1{
+		display:flex;
+		align-items:center;
+		margin-bottom:60px;
+		margin-top:30px;
+		.dz-error-media{
+			margin-#{$dz-pos-right}:65px;
+		}
+		.error-inner{
+			.error-head{
+				font-family: var(--font-family-title);
+				font-size: 30px;
+				font-weight: 700;
+				margin-bottom:37px;
+				color: $body-color;
+			}
+			.dz_error{
+				font-family: var(--font-family-title);
+				font-size: 120px;
+				font-weight: 700;
+				color: #24262B;
+				line-height: 0.7;
+				margin-bottom:20px;
+			}
+			.btn{
+				font-size:16px;
+			}
+		}
+		@include respond('laptop'){
+			.dz-error-media{
+				margin-#{$dz-pos-right}:40px;
+			}
+			.error-inner{
+				.error-head{
+					font-size:28px;
+				}
+			}
+		}
+		@include respond('tab-port'){
+			.dz-error-media{
+				width:200px;
+				min-width:200px;
+			}
+		}
+		@include respond('phone-land'){
+			margin-bottom:30px;
+			.dz-error-media{
+				margin-#{$dz-pos-right}:30px;
+				width:180px;
+				min-width:180px;
+			}
+			.error-inner{
+				.dz_error{
+					font-size:100px;
+				}
+				.error-head{
+					font-size:18px;
+					margin-bottom:15px;
+				}
+			}
+		}
+		@include respond('phone'){
+			display:block;
+			text-align:center;
+			.dz-error-media{
+				margin-#{$dz-pos-right}:auto;
+				margin-#{$dz-pos-left}:auto;
+				margin-bottom:30px;
+			}
+		}
+	}
+	&.style-2{
+		min-height:100vh;
+		
+		.dz_error {
+			color: #fff;
+			font-weight: 700;
+			font-size: 260px;
+			position: absolute;
+			#{$dz-pos-left}: 50%;
+			transform: translate($dz-tx, -50%);
+			top: 50%;
+			background: linear-gradient(to $dz-pos-right, rgb(255, 255, 255) 50%, rgb(36, 38, 43) 50%);
+			background-clip: border-box;
+			line-height: 1;
+			-webkit-background-clip: text;
+			-webkit-text-fill-color: transparent;
+			display: block;
+			transform-origin: center;
+			writing-mode: tb;
+			@include respond('phone-land'){
+				writing-mode: unset;
+				background: linear-gradient(to bottom, white 50%, #24262b 50%);
+			    -webkit-background-clip: text;
+			}
+		}
+		.error-inner{
+			margin:auto;
+			.error-head{
+				font-size:110px;
+				font-weight: 700;
+				line-height:0.8;
+				margin-bottom:25px;
+			}
+			.error-para{
+				font-family: var(--font-family-title);
+				font-weight: 700;
+				font-size: 30px;
+				margin-bottom:60px;
+				color: $body-color;
+				line-height:1.5;
+			}
+		}
+		@include respond('laptop'){
+			.dz_error {
+				font-size:220px;
+			}
+			.error-inner{
+				.error-head{
+					font-size:90px;
+				}
+				.error-para{
+					margin-bottom:35px;
+				}
+			}
+		}
+		@include respond('tab-port'){
+			.dz_error{
+				font-size:180px;
+			}
+			.error-inner{
+				.error-head{
+					font-size:64px;
+				}
+				.error-para{
+					margin-bottom: 20px;
+					font-size: 18px;
+				}
+			}
+		}
+		@include respond('phone-land'){
+			.dz_error{				
+				font-size:100px;
+				top: 200px;				
+			}
+			.error-inner{
+				.error-head{
+					margin-bottom:10px;
+				}
+				.error-para{
+					margin-bottom:20px;
+					font-size:20px;
+				}
+			}
+		}
+	}
+}
+
+.error-start-content{
+	background-color:var(--secondary);
+	padding:80px 90px;
+	
+	@include respond('tab-land'){
+		padding:40px;
+	}
+	.logo{
+		width:170px;
+	}
+	.dz-social-icon{
+		position: absolute;
+		bottom: 95px;
+		top: auto;
+		z-index: 1;
+		@include respond('tab-land'){
+			bottom: 40px;
+		}
+	}
+	@include respond('phone-land'){
+		padding: 45px 70px 40px;
+		height:200px;
+		.dz-social-icon{
+			bottom: 30px;
+			width: 100%;
+			#{$dz-pos-left}: 0;
+			display: flex;
+			justify-content: center;	
+		}
+	}
+	@media screen and (max-height: 550px) {
+		.dz-social-icon{
+			display:none;
+		}
+	}
+	@include respond('phone'){
+		padding: 30px 40px;
+		.dz-social-icon{
+			#{$dz-pos-left}: 50%;
+			transform: translateX($dz-tx);			
+		}
+	} 
+	
+}
+.error-end-content{
+	padding: 80px 40px 80px 120px;
+	display: flex;
+	flex-direction: column;
+	
+	@include respond('tab-port'){
+		padding: 80px 40px 80px 90px;
+	}
+	@include respond('phone-land'){
+		padding: 0;
+		height:50%;
+		min-height:300px;
+		text-align:center;
+		
+	}
+	@include respond('phone'){
+		height:70%;
+	} 
+}

@@ -1,0 +1,122 @@
+
+.site-footer{
+	&.style-3{
+		overflow: hidden;
+		.container.dz-custom-container{
+			max-width: 740px;
+		}
+		
+		
+		.dz-social-icon{
+			justify-content: flex-end;
+			@include respond('phone'){
+				justify-content: start;
+				margin-top:25px;
+			}
+		}
+		.dz-post {
+			height: 100%;
+			position:relative;
+			overflow:hidden;
+		    width: calc(50vw - 200px);
+			float:$dz-pos-right;
+			@include respond('tab-land'){
+				width: calc(50vw - 160px);
+			}
+			@include respond('tab-port'){
+				width: 100vw;
+				margin-#{$dz-pos-left}: calc(calc(-100vw + 720px) / 2);
+				float: none;
+			}
+			@include respond('phone-land'){
+				width: 100vw;
+				margin-#{$dz-pos-left}: calc(calc(-100vw + 520px) / 2);
+			}
+			@include respond('phone'){
+				width: 100vw;
+				margin-#{$dz-pos-left}: -10px;
+				margin-#{$dz-pos-right}: -10px;
+			}
+		}
+		.dz-post-media{
+			   height: 100%;
+			img{
+				width:100%;
+				height: 100%;
+			    object-fit: cover;
+			}
+		}
+
+		.footer-bottom,
+		.footer-top{
+			padding-#{$dz-pos-left}:130px;
+			@include respond('tab-land'){
+				padding-#{$dz-pos-left}:30px;
+			}
+			@include respond('tab-port'){
+				padding-#{$dz-pos-left}:0;
+			}
+		}
+		.logo-topbar{
+			border-bottom:1px solid rgba(255,255,255,0.1);
+			padding-bottom:30px;
+			margin-bottom:80px;
+			@include respond('phone'){
+				margin-bottom:50px;
+			}
+		}
+		.instagram-link{
+			position:absolute;
+			top:50%;
+			#{$dz-pos-left}:50%;
+			transform:translate($dz-tx, -50%);
+			.follow-link{
+				text-align:center;
+				width:240px;
+				height:240px;
+				margin:auto;
+				padding:43px 20px 31px;
+				display:flex;
+				flex-direction:column;
+				.follow-link-content{
+					margin-top:auto;
+					h4{
+						font-size: 16px;
+						font-weight: 700;
+						color: #24262B;
+					}
+					p{
+						font-size: 15px;
+						font-weight: 400;
+						color: rgba(111, 94, 94, 1);
+						margin-bottom:0;
+					}
+				}
+			}
+		}
+		&.right{
+			.footer-bottom,
+			.footer-top{
+				padding-#{$dz-pos-left}:0;
+				padding-#{$dz-pos-right}:130px;
+				@include respond('tab-land'){
+					padding-#{$dz-pos-left}:0;
+					padding-#{$dz-pos-right}:30px;
+				}
+				@include respond('tab-port'){
+					padding-#{$dz-pos-left}:0;
+					padding-#{$dz-pos-right}:0;
+				}
+			}
+			.dz-post{
+				float: $dz-pos-left;
+			}
+		}
+	}
+	&.style-4{
+		background: #fdfdfd;
+		.footer-top{
+			border-top: 2px solid #f1f0f0;
+		}
+	}
+}

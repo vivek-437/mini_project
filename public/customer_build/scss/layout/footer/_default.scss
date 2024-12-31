@@ -1,0 +1,386 @@
+footer{
+	background-image:url();
+	.row{
+		@include respond('phone-land'){
+			--bs-gutter-x: 10px;
+		}
+	}
+		
+	.widget_about{
+		p{
+			margin-bottom:20px;
+		}
+		/* @include respond('tab-land'){
+			text-align: center;
+			max-width: 550px;
+			margin-#{$dz-pos-left}: auto;
+			margin-#{$dz-pos-right}: auto;
+		} */
+	}
+	
+	.footer-logo{
+		margin-bottom:15px;
+		img{
+			max-width:180px;
+		}
+	}
+	
+	.footer-title{
+		margin: 0;
+		font-weight: 700;
+		margin-bottom: 20px;
+		position: relative;
+		line-height: 1.2;
+	}
+	
+	// Footer Top
+	.footer-top{
+		padding: 70px 0px 30px;
+		.widget{
+			margin-bottom: 30px;
+		}
+		@include respond('phone-land'){
+			padding: 50px 0 0;
+		}
+	}
+	
+	// Footer Top
+	.footer-bottom{
+		p{
+			margin-bottom:0;
+		}
+		.heart{
+			width: 60px;
+			height: 60px;
+			display: inline-block;
+			background: url(../images/like.png);
+			cursor: pointer;
+			margin: -25px -15px;
+			&.heart-blast{
+				background-position: -1680px 0 !important;
+				transition: background 1s steps(28);
+			}
+		}
+	}
+	.fb-inner{
+		padding:28px 0;
+		border-top: 1px solid #f3f3f3;
+		color: $body-color;
+		font-weight: 400;
+	    font-size: 15px;
+		.copyright-text{
+			a{
+				color: inherit;
+			}
+		}
+		@include respond('phone'){
+			padding:20px 0;
+			font-size:14px;
+		}
+	}
+	@media only screen and (max-width: 1024px) {
+		.footer-bottom{
+			p{
+				font-size:13px;
+			}
+		}
+	}
+	@include respond('tab-port'){
+		.footer-top{
+			padding: 50px 0px 20px;
+		}
+		.footer-bottom{
+			.text-start,
+			.text-end{
+				text-align: center!important;
+			}
+			.text-end{
+				margin-top: 15px;
+			}
+			p{
+				font-size:15px;
+			}
+		}
+	}
+	@include respond('phone'){
+		.footer-top{
+			padding: 45px 0px 0px;
+		}
+	}
+	
+	.widget_services{
+		ul{
+			li{
+				a{
+					display: block;
+					@include transitionMedium;
+					
+				}
+			}
+		}
+	}
+	.widget-address{
+		margin-bottom: 24px;
+		li{
+			padding: 4px 0;
+			font-size: 14px;
+			font-weight: 400;
+			p{
+				margin-bottom: 0;
+			}
+			span{
+				color: var(--title);
+			}
+		}
+	}
+	&.footer-dark{
+		background:var(--secondary);
+		--title: #fff;
+		.footer-bottom{
+			.fb-inner{
+				border-color: rgba(255,255,255,0.1);
+				color: rgba(255,255,255,0.6);
+			}
+		}
+		.footer-top{
+			color: rgba(255,255,255,0.6);
+		}
+		.icon-bx-wraper{
+			--title: #24262B;
+		}
+	}
+}
+
+.widget_getintuch{
+	ul{
+		li{
+			position: relative;
+			margin-bottom: 15px;
+			padding-#{$dz-pos-left}: 45px;
+			min-height: 35px;
+			display: flex;
+			align-items: center;
+			&:last-child{				
+				margin-bottom: 0;
+			}
+			@include respond('tab-land'){	
+				margin-bottom: 20px;
+				padding-#{$dz-pos-left}: 50px;
+			}
+			@include respond('phone'){	
+				padding-#{$dz-pos-left}: 40px;
+				
+			}
+			h5{
+				font-size: 20px;
+				line-height: 1.33;
+				margin-bottom: 5px;
+				@include respond('tab-land'){	
+					font-size: 18px;
+					line-height: 1.2;
+				}
+			}
+			i{
+				position: absolute;
+				font-size: 28px;
+				line-height: 1;
+				#{$dz-pos-left}: 0;
+				color: var(--primary);
+				@include respond('tab-land'){	
+					font-size: 35px;
+					top: 6px;
+				}
+				@include respond('phone'){	
+					font-size: 24px;
+				}
+			}
+		}
+	}
+}
+
+// contact ft
+.contact-ft-1{
+	text-align:center;
+	margin-bottom:40px;
+	i{
+		color:var(--primary);
+		font-size:50px;
+		line-height:1;
+		margin-bottom: 15px;
+		display: inline-block;
+	}
+	h4{
+		color:$white;
+		text-decoration: underline;
+	}
+	h5{
+		color:$white;
+		font-weight: 400;
+	}
+}
+
+// list column
+.list-column{
+	ul{
+		display: flex;
+		flex-wrap: wrap;
+		li{
+			flex: 0 0 50%;
+			max-width:50%;
+		}
+	}
+}
+
+// fb-link
+.fb-link{
+	list-style:none;
+	margin:0;
+	padding:0;
+	li{
+		display:inline-block;
+		
+		a{
+			color:#fff;
+			position:relative;
+			&:after{
+				content:"";
+				background:var(--primary);
+				width:5px;
+				height:5px;
+			}
+		}
+	}
+}
+
+
+// footer-link
+.footer-link{
+	li{
+		display: inline-block;
+		font-family: $font-family-title;
+		position: relative;
+		padding: 0 25px 0 20px;
+
+		a{
+			color: inherit;
+		}
+		&:before{
+			content: "";
+			height: 8px;
+			width: 8px;
+			background-color: var(--primary);
+			position: absolute;
+			top: 50%;
+			#{$dz-pos-left}: 0;
+			border-radius: 8px;
+			transform: translateY(-50%);
+		}
+	}
+}
+
+// widget_time
+.widget_time{
+	ul{
+		li{
+			display: block;
+			margin-bottom: 5px;
+			label{
+				color: rgba(255,255,255,0.7);
+				margin-bottom: 0;
+				margin-#{$dz-pos-right}: 3px;
+			}
+		}
+	}
+}
+.footer-category{
+	padding-top: 50px;
+    padding-bottom: 50px;
+	background: #f9f9f9;
+	
+	@include respond('tab-port'){
+		padding-top: 30px;
+		padding-bottom: 30px;
+	}
+	.toggle-btn{
+		position: relative;
+		font-family: var(--font-family-title);
+		color: var(--title);
+		font-size: 18px;
+		font-weight: 500;
+		
+		&:before{
+			content: "\2b";
+			font-family: "Font Awesome 6 Free";
+			font-weight: 900;
+			margin-#{$dz-pos-right}: 10px;
+		}
+		&.active{
+			&:before{
+				content: "\f068";
+			}
+		}
+	}
+	
+	.toggle-items{
+		margin-top:22px;
+		display: none;
+		&:after {
+			display: block;
+			clear: both;
+			content: "";
+		}
+		ul{
+			li{
+				width:25%;
+				float: $dz-pos-left;
+				padding: 0;
+				@include respond('phone-land'){
+					padding: 5px 0;
+				}
+				a{
+					color: #363848;
+					display: block;
+					&:hover{
+						color:var(--primary);
+					}
+				}
+				@include respond('tab-land'){
+					width:33%;
+				}
+				@include respond('phone'){
+					width:50%;
+				}
+			}
+		}
+		@include respond('phone-land'){
+			margin-top:10px;
+		}
+	}
+}
+.footer-map{
+	
+	.map-iframe{	
+		width:50vw;
+		float:$dz-pos-right;
+		height:100%;
+		@include respond('phone-land'){
+			width: 100%;
+			margin-top: 50px;
+			iframe{
+				height: 250px !important;
+				min-height: 250px !important;
+			}
+		}
+	}
+	
+	
+	.footer-top,
+	.footer-bottom{
+		padding-#{$dz-pos-left}: 40px;
+		padding-#{$dz-pos-right}: 40px;
+		@include respond('phone-land'){
+			padding-#{$dz-pos-left}: 0;
+			padding-#{$dz-pos-right}: 0;
+		}
+	}
+}
