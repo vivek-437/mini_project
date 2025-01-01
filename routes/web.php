@@ -6,6 +6,7 @@ use App\Http\Controllers\Admin\ProductVariantImagesController;
 use App\Http\Controllers\Admin\ProductVariantsController;
 use App\Http\Controllers\Admin\VariantAttributesController;
 use App\Http\Controllers\Admin\VariantAttributeValuesController;
+use App\Http\Controllers\Customer\HomeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -66,6 +67,8 @@ Route::controller(ProductVariantImagesController::class)->group(function () {
 
 
 // ----------------------------------customer--------------------------------------------------
-Route::get('/', function () {
-    return view('cutomer.404');
-})->name('dashboard');
+
+
+Route::controller(HomeController::class)->group(function(){
+    Route::get('/','index')->name('customer.home');
+});
