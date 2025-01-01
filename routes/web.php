@@ -67,5 +67,5 @@ Route::controller(ProductVariantImagesController::class)->group(function () {
 
 // ----------------------------------customer--------------------------------------------------
 Route::get('/', function () {
-    return view('cutomer.customer-product-detail');
+    return view('cutomer.404');
 })->name('dashboard');
