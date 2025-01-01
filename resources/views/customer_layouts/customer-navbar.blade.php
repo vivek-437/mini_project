@@ -81,14 +81,9 @@
                         <a href="index.html"><img src="images/logo.svg" alt=""></a>
                     </div>
                     <ul class="nav navbar-nav dark-nav">
-                        <li class="sub-menu sub-menu-down">
+                        <li class="sub-menu">
                             <a href="javascript:void(0);"><span>Home</span></a>
-                            <ul class="sub-menu">
-                                <li><a href="index.html">01 Home Page</a></li>
-                                <li><a href="index-2.html">02 Home Page</a></li>
-                                <li><a href="index-3.html">03 Home Page</a></li>
-                                <li><a href="index-4.html">04 Home Page</a></li>
-                            </ul>
+                   
                         </li>
                         <li class="has-mega-menu sub-menu-down">
                             <a href="javascript:void(0);"><span>Shop</span></a>
