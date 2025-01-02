@@ -6,7 +6,12 @@ use App\Http\Controllers\Admin\ProductVariantImagesController;
 use App\Http\Controllers\Admin\ProductVariantsController;
 use App\Http\Controllers\Admin\VariantAttributesController;
 use App\Http\Controllers\Admin\VariantAttributeValuesController;
+use App\Http\Controllers\Customer\AuthController;
+use App\Http\Controllers\Customer\CartController;
+use App\Http\Controllers\Customer\CheckoutController;
+use App\Http\Controllers\Customer\ContactUsController;
 use App\Http\Controllers\Customer\HomeController;
+use App\Http\Controllers\Customer\NavbarController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -68,7 +73,34 @@ Route::controller(ProductVariantImagesController::class)->group(function () {
 
 // ----------------------------------customer--------------------------------------------------
 
-
+// for home page
 Route::controller(HomeController::class)->group(function(){
     Route::get('/','index')->name('customer.home');
+});
+
+// for navbar menu
+Route::controller(NavbarController::class)->group(function(){
+    Route::get('/navbar','index')->name('customer.navbar');
+});
+
+
+// Authentication
+Route::controller(AuthController::class)->group(function(){
+    Route::get('/login','login')->name('customer.login');
+    Route::get('/register','register')->name('customer.register');
+});
+
+// contact us
+Route::controller(ContactUsController::class)->group(function(){
+    Route::get('/contact-us','index')->name('customer.contact-us');
+});
+
+// checkout
+Route::controller(CheckoutController::class)->group(function(){
+    Route::get('/checkout','index')->name('customer.checkout');
+});
+
+// cart
+Route::controller(CartController::class)->group(function(){
+    Route::get('/cart','index')->name('customer.cart');
 });

@@ -45,7 +45,7 @@
                             <div class="text-center">
                                 <a href="shop-registration.html"
                                     class="btn btn-secondary btnhover text-uppercase me-2">Register</a>
-                                <a href="shop-my-account.html"
+                                <a href="{{route('customer.login')}}"
                                     class="btn btn-outline-secondary btnhover text-uppercase">Sign In</a>
                             </div>
                         </form>

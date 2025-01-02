@@ -5,7 +5,7 @@
             <div class="container-fluid clearfix">
                 <!-- Website Logo -->
                 <div class="logo-header logo-dark me-md-5">
-                    <a href="index.html"><img src="images/logo.svg" alt="logo"></a>
+                    <a href="{{route('customer.home')}}"><img src="images/logo.svg" alt="logo"></a>
                 </div>
 
                 <!-- Nav Toggle Button -->
@@ -22,7 +22,8 @@
                     <div class="extra-cell">
                         <ul class="header-right">
                             <li class="nav-item login-link">
-                                <a class="nav-link" href="shop-my-account.html">
+                                <a class="nav-link {{ request()->routeIs('customer.login') ? 'custom-menu-active' : '' }} {{ request()->routeIs('customer.register') ? 'custom-menu-active' : '' }}"
+                                    href="{{ route('customer.login') }}">
                                     LOGIN / REGISTER
                                 </a>
                             </li>
@@ -38,21 +39,7 @@
                                     </svg>
                                 </a>
                             </li>
-                            <li class="nav-item wishlist-link">
-                                <a class="nav-link" href="javascript:void(0);" data-bs-toggle="offcanvas"
-                                    data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
-                                    <svg width="21" height="21" viewBox="0 0 21 21" fill="none"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <path fill-rule="evenodd" clip-rule="evenodd"
-                                            d="M2.64119 10.4097C1.74702 7.61808 2.79202 4.42724 5.72285 3.48308C7.26452 2.98558 8.96619 3.27891 10.2479 4.24308C11.4604 3.30558 13.2245 2.98891 14.7645 3.48308C17.6954 4.42724 18.747 7.61808 17.8537 10.4097C16.462 14.8347 10.2479 18.2431 10.2479 18.2431C10.2479 18.2431 4.07952 14.8864 2.64119 10.4097Z"
-                                            stroke="var(--white)" stroke-width="1.5" stroke-linecap="round"
-                                            stroke-linejoin="round" />
-                                        <path d="M13.5813 6.32781C14.473 6.61614 15.103 7.41197 15.1788 8.34614"
-                                            stroke="var(--white)" stroke-width="1.5" stroke-linecap="round"
-                                            stroke-linejoin="round" />
-                                    </svg>
-                                </a>
-                            </li>
+
                             <li class="nav-item cart-link">
                                 <a href="javascript:void(0);" class="nav-link cart-btn" data-bs-toggle="offcanvas"
                                     data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
@@ -82,188 +69,21 @@
                     </div>
                     <ul class="nav navbar-nav dark-nav">
                         <li class="sub-menu">
-                            <a href="javascript:void(0);"><span>Home</span></a>
-                   
+                            <a href="{{ route('customer.home') }}"
+                                class="{{ request()->routeIs('customer.home') ? 'custom-menu-active' : '' }} {{ request()->routeIs('customer.contact-us') ? 'custom-color-white' : '' }}"><span>Home</span></a>
                         </li>
-                        <li class="has-mega-menu sub-menu-down">
-                            <a href="javascript:void(0);"><span>Shop</span></a>
-                            <div class="mega-menu shop-menu">
-                                <div class="row">
-                                    <div class="col-lg-12 col-md-12 col-sm-12">
-                                        <div class="row">
-                                            <div class="col-md-4 col-sm-6 col-6">
-                                                <a href="javascript:;" class="menu-title">Shop Structure</a>
-                                                <ul>
-                                                    <li><a href="shop-standard.html">Shop Standard</a></li>
-                                                    <li><a href="shop-list.html">Shop List</a></li>
-                                                    <li><a href="shop-with-category.html">Shop With Category</a>
-                                                    </li>
-                                                    <li><a href="shop-filters-top-bar.html">Shop Filters Top
-                                                            Bar</a></li>
-                                                    <li><a href="shop-sidebar.html">Shop Sidebar</a></li>
-                                                    <li><a href="shop-style-1.html">Shop Style 1</a></li>
-                                                </ul>
-                                                <a href="javascript:;" class="menu-title">Product Structure</a>
-                                                <ul>
-                                                    <li><a href="product-default.html">Default</a></li>
-                                                    <li><a href="product-thumbnail.html">Thumbnail</a></li>
-                                                </ul>
-                                            </div>
-                                            <div class="col-md-3 col-sm-6 col-12">
-                                                <a href="javascript:;" class="menu-title">Shop Pages</a>
-                                                <ul>
-                                                    <li><a href="shop-wishlist.html">Wishlist</a></li>
-                                                    <li><a href="shop-cart.html">Cart</a></li>
-                                                    <li><a href="shop-checkout.html">Checkout</a></li>
-                                                    <li><a href="shop-order-tracking.html">Order Tracking</a></li>
-                                                    <li><a href="shop-my-account.html">My Account</a></li>
-                                                    <li><a href="shop-registration.html">Registration</a></li>
-                                                </ul>
-                                            </div>
-                                            <div class="col-md-5 col-sm-4 col-6 d-none d-md-block">
-                                                <div class="adv-media"><img src="images/adv-1.png" alt="/">
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-12">
-                                                <div class="month-deal">
-                                                    <div>
-                                                        <h3>Deal of the month</h3>
-                                                        <p class="mb-0">Yes! Send me exclusive offers,
-                                                            personalised, and unique gift ideas, tips for shopping
-                                                            on MoonCart <a href="shop-standard.html"
-                                                                class="dz-link-2">View All Products</a></p>
-                                                    </div>
-                                                    <div class="sale-countdown">
-                                                        <div class="countdown text-center">
-                                                            <div class="date"><span
-                                                                    class="time days text-primary"></span>
-                                                                <span class="work-time">Days</span>
-                                                            </div>
-                                                            <div class="date"><span
-                                                                    class="time hours text-primary"></span>
-                                                                <span class="work-time">Hours</span>
-                                                            </div>
-                                                            <div class="date"><span
-                                                                    class="time mins text-primary"></span>
-                                                                <span class="work-time">Minutess</span>
-                                                            </div>
-                                                            <div class="date"><span
-                                                                    class="time secs text-primary"></span>
-                                                                <span class="work-time">Second</span>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="has-mega-menu sub-menu-down"><a href="javascript:void(0);"><span>Blog</span></a>
-                            <div class="mega-menu blog-menu">
-                                <div class="row">
-                                    <div class="col-md-6 col-sm-6 col-6">
-                                        <a href="javascript:;" class="menu-title">Blog Dark Style</a>
-                                        <ul>
-                                            <li><a href="blog-dark-2-column.html">Blog 2 Column</a></li>
-                                            <li><a href="blog-dark-2-column-sidebar.html">Blog 2 Column Sidebar</a>
-                                            </li>
-                                            <li><a href="blog-dark-3-column.html">Blog 3 Column</a></li>
-                                            <li><a href="blog-dark-half-image.html">Blog Half Image</a></li>
-                                        </ul>
-                                        <a href="javascript:;" class="menu-title">Blog Light Style</a>
-                                        <ul>
-                                            <li><a href="blog-light-2-column.html">Blog 2 Column</a></li>
-                                            <li><a href="blog-light-2-column-sidebar.html">Blog 2 Column
-                                                    Sidebar</a></li>
-                                            <li><a href="blog-light-3-column.html">Blog 3 Column</a></li>
-                                            <li><a href="blog-light-half-image.html">Blog Half Image</a></li>
-                                        </ul>
-                                        <a href="javascript:;" class="menu-title">Blog Details</a>
-                                        <ul>
-                                            <li><a href="post-standard.html">Post Standard</a></li>
-                                            <li><a href="post-header-image.html">Post Header Image</a></li>
-                                        </ul>
-                                    </div>
-                                    <div class="col-md-6 col-sm-6 col-12">
-                                        <a href="javascript:;" class="menu-title">Recent Posts</a>
-                                        <div class="widget widget_post pt-2">
-                                            <ul>
-                                                <li>
-                                                    <div class="dz-media">
-                                                        <img src="images/shop/product/small/1.png" alt="">
-                                                    </div>
-                                                    <div class="dz-content">
-                                                        <h6 class="name"><a href="post-standard.html">Wooden
-                                                                Water Bottles</a></h6>
-                                                        <span class="time">July 23, 2023</span>
-                                                    </div>
-                                                </li>
-                                                <li>
-                                                    <div class="dz-media">
-                                                        <img src="images/shop/product/small/2.png" alt="">
-                                                    </div>
-                                                    <div class="dz-content">
-                                                        <h6 class="name"><a href="post-standard.html">Eco
-                                                                friendly bags</a></h6>
-                                                        <span class="time">July 23, 2023</span>
-                                                    </div>
-                                                </li>
-                                                <li>
-                                                    <div class="dz-media">
-                                                        <img src="images/shop/product/small/3.png" alt="">
-                                                    </div>
-                                                    <div class="dz-content">
-                                                        <h6 class="name"><a href="post-standard.html">Bamboo
-                                                                toothbrushes</a></h6>
-                                                        <span class="time">July 23, 2023</span>
-                                                    </div>
-                                                </li>
-                                                <li>
-                                                    <div class="dz-media">
-                                                        <img src="images/shop/product/small/2.png" alt="">
-                                                    </div>
-                                                    <div class="dz-content">
-                                                        <h6 class="name"><a href="post-standard.html">Eco
-                                                                friendly bags</a></h6>
-                                                        <span class="time">July 23, 2023</span>
-                                                    </div>
-                                                </li>
-                                                <li>
-                                                    <div class="dz-media">
-                                                        <img src="images/shop/product/small/1.png" alt="">
-                                                    </div>
-                                                    <div class="dz-content">
-                                                        <h6 class="name"><a href="post-standard.html">Wooden
-                                                                Water Bottles</a></h6>
-                                                        <span class="time">July 23, 2023</span>
-                                                    </div>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="sub-menu sub-menu-down"><a href="javascript:void(0);"><span>Pages</span></a>
-                            <ul class="sub-menu">
-                                <li><a href="about-us.html">About Us</a></li>
-                                <li><a href="about-me.html">About Me</a></li>
-                                <li><a href="pricing-table.html">Pricing Table</a></li>
-                                <li><a href="our-gift-vouchers.html">Our Gift Vouchers</a></li>
-                                <li><a href="what-we-do.html">What We Do</a></li>
-                                <li><a href="faqs-1.html">Faqs</a></li>
-                                <li><a href="our-team.html">Our Team</a></li>
-                                <li><a href="contact-us-1.html">Contact Us</a></li>
-                                <li><a href="error-1.html">Error 404</a></li>
-                                <li><a href="under-construction.html">Under Construction</a></li>
-                                <li><a href="coming-soon.html">Coming Soon</a></li>
+
+
+                        <li class="sub-menu sub-menu-down">
+                            <a href="javascript:void(0);" class="{{ request()->routeIs('customer.contact-us') ? 'custom-color-white' : '' }}"><span>Categories</span></a>
+                            <ul id="dynamic-sub-menu" class="sub-menu">
+                                <!-- Submenu items will be appended here dynamically -->
                             </ul>
                         </li>
-                        <li><a href="contact-us-1.html">Contact Us</a></li>
+
+                        <li><a href="{{ route('customer.contact-us') }}"
+                                class="{{ request()->routeIs('customer.contact-us') ? 'custom-menu-active' : '' }}">Contact
+                                Us</a></li>
                     </ul>
 
                     <div class="dz-social-icon">
@@ -535,8 +355,10 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <a href="shop-checkout.html" class="btn btn-light btn-block m-b20">Checkout</a>
-                                    <a href="shop-cart.html" class="btn btn-secondary btn-block">View Cart</a>
+                                    <a href="{{ route('customer.checkout') }}"
+                                        class="btn btn-light btn-block m-b20">Checkout</a>
+                                    <a href="{{ route('customer.cart') }}" class="btn btn-secondary btn-block">View
+                                        Cart</a>
                                 </div>
                             </div>
                         </div>
@@ -610,4 +432,3 @@
     <!-- Sidebar cart -->
 
 </header>
-

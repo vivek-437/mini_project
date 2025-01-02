@@ -20,6 +20,12 @@
             right: 20px;
             z-index: 99999;
         }
+        .custom-menu-active{
+            color: var(--primary) !important;
+        }
+        .custom-color-white{
+            color: var(--title) !important;
+        }
     </style>
     @include('customer_layouts.customer-head-css')
     <!-- Page CSS -->
@@ -60,8 +66,35 @@
     <!-- Core JS -->
     <!-- build:js assets/vendor/js/core.js -->
     @include('customer_layouts.customer-vendor-script')
+    {{-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> --}}
     <script>
         $(document).ready(function() {
+            //code to fetch menu for navbar 
+            $.ajax({
+                url: "{{ route('customer.navbar') }}", // Replace with your actual route
+                type: 'GET',
+                success: function(response) {
+                    if (response.success) {
+                        const submenu = $('#dynamic-sub-menu');
+                        submenu.empty(); // Clear existing submenu items
+
+                        // Populate submenu with response data
+                        response.data.forEach(item => {
+                            submenu.append(
+                                `<li><a href="javascript:void(0);" data-id="${item.id}">${item.name}</a></li>`
+                                );
+                        });
+
+                    } else {
+                        toastr.error('Failed to load submenu items. Please try again.');
+                    }
+                },
+                error: function(xhr) {
+                    toastr.error('Failed to fetch client details. Please try again later.');
+                }
+            });
+
+
             // Function to display a toast
             function showToast(message, type) {
                 const toastHtml = `
