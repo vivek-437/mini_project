@@ -23,4 +23,8 @@ class tbl_products extends Model
     {
         return $this->belongsTo(tbl_categories::class, 'tbl_category_id');
     }
+
+    public function variants(){
+        return $this->hasMany(tbl_product_variants::class,'tbl_product_id');
+    }
 }

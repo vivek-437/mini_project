@@ -31,4 +31,9 @@ class tbl_product_variant_attribute_values extends Model
     {
         return $this->belongsTo(tbl_variant_attributes::class, 'tbl_variant_attribute_id');
     }
+
+    public function attribute()
+    {
+        return $this->belongsTo(tbl_variant_attributes::class, 'tbl_variant_attribute_id');
+    }
 }

@@ -25,6 +25,12 @@ class tbl_product_variant_images extends Model
         return $this->belongsTo(tbl_product_variants::class, 'tbl_product_variant_id');
     }
 
+    public function variant()
+    {
+        return $this->belongsTo(tbl_product_variants::class, 'tbl_product_variant_id');
+    }
+
+
     // Get formatted name combining product name and variant ID
     public function getFormattedNameAttribute()
     {

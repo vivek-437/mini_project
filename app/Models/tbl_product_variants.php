@@ -16,5 +16,14 @@ class tbl_product_variants extends Model
     {
         return $this->belongsTo(tbl_products::class, 'tbl_product_id');
     }
-    
+
+    public function attributes()
+    {
+        return $this->hasMany(tbl_product_variant_attribute_values::class, 'tbl_product_variant_id');
+    }
+
+    public function images()
+    {
+        return $this->hasMany(tbl_product_variant_images::class, 'tbl_product_variant_id');
+    }
 }
